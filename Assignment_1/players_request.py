@@ -1,24 +1,18 @@
-import csv
 from nba_api.stats.static import players
+import pandas as pd
+import os
 
+# Get current working directory
+cwd = os.getcwd()
 # Retrieving nba players info
-nba_players = players.get_players()
-
+nba_player_list = players.get_players()
 # ie {'id': 2544, 'full_name': 'LeBron James', 'first_name': 'LeBron', 'last_name': 'James'}
 
-# Define the output csv file path
-players_tab = "/home/paul/PycharmProjects/Data-Management-and-Database-Design/" \
-              "Assignment_1/raw_data/players_tab.csv"
+# Convert nba_players to pandas dataframe
+nba_player_df = pd.DataFrame.from_dict(nba_player_list)
 
-# Write the csv file with nba player info
-with open(players_tab, 'w') as f:
-    # retrieve the headers in dictionaries
-    headers = sorted([k for k, v in nba_players[0].items()])
-    csv_data = [headers]
+# csv file path
+csv_path = cwd + '/raw_data/player_id.csv'
 
-
-    for d in nba_players:
-        csv_data.append([d[h] for h in headers])
-    # Fill the csv
-    writer = csv.writer(f)
-    writer.writerows(csv_data)
+# Save the player id info
+nba_player_df.to_csv(csv_path)
