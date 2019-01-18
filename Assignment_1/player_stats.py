@@ -23,6 +23,7 @@ for i in range(1,length):
         playercareerstats.PlayerCareerStats(player_id = nba_player_id[i], per_mode36 = 'Totals').get_data_frames()[1]
                                       , ignore_index=True)
 
+
     # Printing progress
     progress = i
     print('Progress ',progress, '/', length)
