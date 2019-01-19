@@ -16,3 +16,5 @@ csv_path = cwd + '/raw_data/player_id.csv'
 
 # Save the player id info
 nba_player_df.to_csv(csv_path)
+
+print('File saved as', csv_path)

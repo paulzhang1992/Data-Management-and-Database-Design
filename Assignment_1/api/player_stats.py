@@ -33,5 +33,8 @@ for i in range(1,length):
     time.sleep(0.5)
 
 # Set csv saving path
-stats_path = cwd + '/raw_data/player_regular_totalstats.csv'
-player_regular_totalstats.to_csv(stats_path)
+csv_path = cwd + '/raw_data/player_regular_totalstats.csv'
+player_regular_totalstats.to_csv(csv_path)
+
+
+print('File saved as', csv_path)
