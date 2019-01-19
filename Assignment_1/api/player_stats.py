@@ -28,7 +28,8 @@ for i in range(1,length):
     progress = i
     print('Progress ',progress, '/', length)
 
-    # 0.5 second of delay to prevent issues
+    # Rapid request without caused fail during test
+    # Set 0.5 second of delay to prevent issues
     time.sleep(0.5)
 
 # Set csv saving path
