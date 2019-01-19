@@ -34,7 +34,7 @@ for i in range(1,length):
 
 # Set csv saving path
 csv_path = cwd + '/raw_data/player_regular_totalstats.csv'
-player_regular_totalstats.to_csv(csv_path)
 
+player_regular_totalstats.to_csv(csv_path)
 
 print('File saved as', csv_path)
