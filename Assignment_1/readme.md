@@ -1,4 +1,4 @@
-#The title and the requirements are stated as below:<br/> 
+#The title and the requirements are stated as below:
 Gathering, Scraping, Munging and Cleaning Data<br/>
 In this assignment, you will be gathering real-world data. This process is often called data munging or
 data wrangling. All of your database tables must be populated with real-world data. Any substitution of
