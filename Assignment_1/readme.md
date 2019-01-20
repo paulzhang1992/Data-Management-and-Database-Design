@@ -1,11 +1,11 @@
-#The title and the requirements are stated as below:
-Gathering, Scraping, Munging and Cleaning Data<br/>
+# The title and the requirements are stated as below:
+## Gathering, Scraping, Munging and Cleaning Data<br/>
 In this assignment, you will be gathering real-world data. This process is often called data munging or
 data wrangling. All of your database tables must be populated with real-world data. Any substitution of
 simulated data for real-world data must be pre-approved by the TAs.
 This assignment can be done in pairs, or individually.
 
-The process is as follows:
+## The process is as follows:
 
 You must find sources of data. (This can be downloads, XML files, JSON, HTML pages, data repositories,
 etc.) The data must have a thematic relation (e.g. all NBA data, all job data, etc.) (30 points)
