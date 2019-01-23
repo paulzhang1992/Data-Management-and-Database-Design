@@ -21,3 +21,5 @@ csv_path = cwd + '/raw_data/player_info.csv'
 player_info.to_csv(csv_path)
 
 print('File saved as', csv_path)
+
+
