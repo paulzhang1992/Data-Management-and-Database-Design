@@ -1,4 +1,4 @@
-,NAME,YEAR_START,YAR_END,POSITION,HEIGHT,WEIGHT,BIRTH_DATE,COLLEGE
+,FULL_NAME,YEAR_START,YEAR_END,POSITION,HEIGHT,WEIGHT,BIRTH_DATE,COLLEGE
 0,Alaa Abdelnaby,1991,1995,F-C,6-10,240.0,"June 24, 1968",Duke University
 1,Zaid Abdul-Aziz,1969,1978,C-F,6-9,235.0,"April 7, 1946",Iowa State University
 2,Kareem Abdul-Jabbar,1970,1989,C,7-2,225.0,"April 16, 1947","University of California, Los Angeles"
