@@ -11,7 +11,7 @@ nba_player_df = pd.read_csv(cwd + '/raw_data/player_id.csv')
 #nba_player_df.head(10)
 
 # Extract player id for requesting player stats
-nba_player_id = nba_player_df ['id']
+nba_player_id = nba_player_df ['PLAYER_ID']
 
 # Request first record to initiate the player stat dataframe
 player_regular_totalstats = playercareerstats.PlayerCareerStats(player_id = nba_player_id[0], per_mode36 = 'Totals').get_data_frames()[1]
@@ -31,6 +31,8 @@ for i in range(1,length):
     # Rapid request without caused fail during test
     # Set 0.5 second of delay to prevent issues
     time.sleep(0.5)
+
+player_regular_totalstats.columns = ['','PLAYER_ID', 'LEAGUE_ID', 'TEAM_ID', 'GP', 'GS', 'MIN', 'FGM', 'FGA', 'FG_PCT', 'FG3M', 'FG3A', 'FG3_PCT', 'FTM', 'FTA', 'FT_PCT', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
 
 # Set csv saving path
 csv_path = cwd + '/raw_data/player_regular_totalstats.csv'

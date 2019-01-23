@@ -11,6 +11,7 @@ nba_player_list = players.get_players()
 # Convert nba_players to pandas dataframe
 nba_player_df = pd.DataFrame.from_dict(nba_player_list)
 
+nba_player_df.columns = ['FIRST_NAME', 'FULL_NAME', 'PLAYER_ID', 'LAST_NAME']
 # csv file path
 csv_path = cwd + '/raw_data/player_id.csv'
 
