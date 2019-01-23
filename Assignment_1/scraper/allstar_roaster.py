@@ -7,7 +7,7 @@ import time
 # Get current working directory
 cwd = os.getcwd()
 
-allstar_games=pd.read_csv(cwd+'/allstar_games.csv')
+allstar_games=pd.read_csv(cwd+'/raw_data/allstar_games.csv')
 
 year = pd.DatetimeIndex(allstar_games['DATE']).year
 
@@ -89,7 +89,7 @@ player_allstar_list.columns = ['FULL_NAME','STATUS','POSITION','MIN','FGM-A','FG
 
 
 # csv file path
-csv_path = cwd + '/allstar_roaster.csv'
+csv_path = cwd + '/raw_data/allstar_roaster.csv'
 
 # Save the allstar players
 player_allstar_list.to_csv(csv_path)

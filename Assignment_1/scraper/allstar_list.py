@@ -53,7 +53,7 @@ allstar_list = allstar_list.drop(index = 0)
 allstar_list.columns = ['DATE','WINNING_TEAM', 'WINNING_SCORE', 'LOSING_TEAM', 'LOSING_SCORE', 'VENUE',	'MVP']
 
 # csv file path
-csv_path = cwd + '/allstar_games.csv'
+csv_path = cwd + '/raw_data/allstar_games.csv'
 
 # Save the allstar players
 allstar_list.to_csv(csv_path)
