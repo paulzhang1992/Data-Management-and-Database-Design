@@ -26,7 +26,7 @@ for i in range(1,length):
 
     # Printing progress
     progress = i
-    print('Progress ',progress, '/', length)
+    print('Progress %d / %d' %(progress,length))
 
     # Rapid request without caused fail during test
     # Set 0.5 second of delay to prevent issues

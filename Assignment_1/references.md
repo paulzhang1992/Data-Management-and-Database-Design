@@ -8,7 +8,11 @@ player_data.csv\
 This file is was acquired from kaggle. Uploaded by Omri Goldstein, and was orignally scraped from [Basketball-reference](https://www.basketball-reference.com/)\
 Last accessed on Jan.21.2019
 
-### [Beautiful soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc)\
+### [REAL GM](https://basketball.realgm.com/nba)
+All star data was scraped from real gm.\
+Last accessed on Jan.26.2019
+
+### [Beautiful soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc)
 Most of usage for package are from the user's manual. \
 Last accessed on Jan.21.2019
 

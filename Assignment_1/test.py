@@ -1,7 +1,6 @@
 import os
 
-cwd = os.getcwd()
 
-cwd = cwd + '/raw_data/player_id.csv'
-
-print(cwd)
+progress =1
+length =2
+print('Progress %d / %d' %(progress,length))
