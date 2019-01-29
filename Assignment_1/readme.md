@@ -77,8 +77,6 @@ The overall data quality is good. There are lots of missing value in players' to
 especially the 3 pointers. This is caused by the changes in rules in NBA history. Offensive and defensive rebound are also introduced later.
 The database will have six entities such as player_id, allstar_games and player_total_stats. The detail of their relationship will be introduced in the ERD. 
 
-
-
 # CONTRIBUTIONS
 #### Zeyu ZHANG NUID 001495690: 
 - Requested player name and id list from nba.com with nba_api.
