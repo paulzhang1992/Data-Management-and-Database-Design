@@ -33,6 +33,7 @@ Basic data operations are operated with pandas and three csv files are created t
 
 #### Download Data
 Second data source is from directly download according to the assignment requirements.\
+Source of data is kaggle.com and the detail information can be found in references.\
 The file is untouched with rename of columns to maintain the uniformity of naming with all capitals.\
 The data is stored at **/Assignment_1/direct_download/raw_data**
 
@@ -78,7 +79,7 @@ The database will have six entities such as player_id, allstar_games and player_
 
 
 # CONTRIBUTIONS
-#### Zeyu ZHANG: 
+#### Zeyu ZHANG NUID 001495690: 
 - Requested player name and id list from nba.com with nba_api.
 - Requested player total status from nba.com with nba_api.
 - Find the raw data of player information from kaggle.com.
@@ -87,7 +88,7 @@ The database will have six entities such as player_id, allstar_games and player_
 - Audited and cleaned the web scraped data and added key columns to those data. Assigned the correct ID to players that have the same name.
 - Design and Drew the ERD for the conceptual database schema.
 
-#### Xuan SHEN:
+#### Xuan SHEN NUID 001422135:
 - Requested player draft history list from nba.com with nba_api.
 - Requested player shooting data from nba.com with nba_api.
 - Drew the shooting chart for some of the players.
