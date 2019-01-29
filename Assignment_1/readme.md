@@ -6,10 +6,10 @@ There must be three sources:\
     3. Raw text, csv, xml, or excel data\
 You must create a conceptual database model (10 points)\
 You must download and reformat the data to fit a conceptual database model. (10 points)
-You must audit the quality and estimate the amount of data you’ll gather.\
-- Audit Validity/ Accuracy \
-- Audit Completeness\
-- Audit Consistency/Uniformity \
+You must audit the quality and estimate the amount of data you’ll gather.
+- Audit Validity/ Accuracy 
+- Audit Completeness
+- Audit Consistency/Uniformity 
 
 You must clean the data or show that it doesn’t need cleaning (10 points)\
 Write a report explaining all of the files, the tests and their results and code. (30 points)
@@ -50,10 +50,22 @@ Player stats is basically the same except there are two tables contain data from
 The structure of database is designed and drew with mySQL workbench and saved in **/Assignment_1/database_design** and exported as a pdf file for easy access.
 
 There are total six entities in this database where their source is explained in the previous part. The database has 3 1 to 1 relationships and 2 1 to many relationships.\
-Detail of the structure and the PK/FK design can be found in the ERD.
+The first entity is called player_id. The primary key of this entity is PLAYER_ID. Other attributes is inculded such as FIRST_NAME and LAST_NAME.\
+Player_draft_history table has a one to one relationship with player_id. The primary key for draft history is DRAFT_ID while PLAYER_ID from player_id table is the foreign key.
+Player_id is requested for those who has a stats record where draft history contains every players including those who never played in the NBA. For this reason Their might be some records that do not appeared in player_id table.\
+For player_stats, it's also a one to one relationship with player_id. PK is RECORD_ID where FK is PLAYER_ID from player_id.\
+Player_id and allstar_roaster has a one to many relationship. Some of the player may not appears in allstar games at all, but there are players appeared many times.\
+PK of allstar_roaster is RECORD_ID where FK are PLAYER_ID from player_id and GAME_ID from allstar_games. Allstar_games is another entity taht has the one to many relationship with allstar_roaster.
+
+ 
+Detail of the structure, PK/FK design and columons information can be found in the ERD.
 
 ### Data Auditing and Cleaning
 The data auditing is performed in jupyter notebook. The detail and result can be found at **/Assignment_1/data_process**. Each csv file is audited and cleaned in an individual notebook.\
+In general, there are missing data need be dealt with. Some of them have already talked about during the data section such as three pointers and offensive/ defensive rebounds. \
+Scraped data had a great quality. Only some formatting changes need be done during the scraping process. However, we need add a unique id, GAME_ID and RECORD_ID, to them to match the ERD.\
+This involved some effort to deal with the duplicated name. Using multiple checking values is essential. Adding a few players into the player_id with their unique id is also needed to make sure every record have a PLAYER_ID.
+  
 Final data is stored with their original name and final at the end. Files are stored at **/Assignment_1/data_process/final_data/**\
 These are the data that will eventually fill our database.
 
