@@ -25,7 +25,7 @@ Details of the code and file structure will be explained in this section.
 #### Api
 The first data source is acquired with nba_api. This api is a community build api that covered almost every enpoints for nba.com.\
 This part of **code** is stored in **/Assignment_1/api** \
-The player id/name and draft history can directly be requested as a list from nba.com where player stats need be requested for each player.
+The player id/name and draft history can directly be requested as a list from nba.com where player stats need to be requested for each player.
 Basic data operations are operated with pandas and three csv files are created to stored the data at **/Assignment_1/api/raw_data** including :
 - player_id.csv
 - player_regulat_totalstats.csv
@@ -54,7 +54,8 @@ There are total six entities in this database where their source is explained in
 The first entity is called player_id. The primary key of this entity is PLAYER_ID. Other attributes is inculded such as FIRST_NAME and LAST_NAME.\
 Player_draft_history table has a one to one relationship with player_id. The primary key for draft history is DRAFT_ID while PLAYER_ID from player_id table is the foreign key.
 Player_id is requested for those who has a stats record where draft history contains every players including those who never played in the NBA. For this reason Their might be some records that do not appeared in player_id table.\
-For player_stats, it's also a one to one relationship with player_id. PK is RECORD_ID where FK is PLAYER_ID from player_id.\
+For player_stats, it's also a one to one relationship with player_id. PK is STATS_ID where FK is PLAYER_ID from player_id.\
+Player_info, data downloaded from kaggle, also has a one to one relationship with player_id where RECORD_ID is the PK.
 Player_id and allstar_roaster has a one to many relationship. Some of the player may not appears in allstar games at all, but there are players appeared many times.\
 PK of allstar_roaster is RECORD_ID where FK are PLAYER_ID from player_id and GAME_ID from allstar_games. Allstar_games is another entity taht has the one to many relationship with allstar_roaster.
 
@@ -63,8 +64,8 @@ Detail of the structure, PK/FK design and columons information can be found in t
 
 ### Data Auditing and Cleaning
 The data auditing is performed in jupyter notebook. The detail and result can be found at **/Assignment_1/data_process**. Each csv file is audited and cleaned in an individual notebook.\
-In general, there are missing data need be dealt with. Some of them have already talked about during the data section such as three pointers and offensive/ defensive rebounds. \
-Scraped data had a great quality. Only some formatting changes need be done during the scraping process. However, we need add a unique id, GAME_ID and RECORD_ID, to them to match the ERD.\
+In general, there are missing data need to be dealt with. Some of them have already talked about during the data section such as three pointers and offensive/ defensive rebounds. \
+Scraped data had a great quality. Only some formatting changes need to be done during the scraping process. However, we need add a unique id, GAME_ID and RECORD_ID, to them to match the ERD.\
 This involved some effort to deal with the duplicated name. Using multiple checking values is essential. Adding a few players into the player_id with their unique id is also needed to make sure every record have a PLAYER_ID.
   
 Final data is stored with their original name and final at the end. Files are stored at **/Assignment_1/data_process/final_data/**\
