@@ -78,7 +78,7 @@ especially the 3 pointers. This is caused by the changes in rules in NBA history
 The database will have six entities such as player_id, allstar_games and player_total_stats. The detail of their relationship will be introduced in the ERD. 
 
 # CONTRIBUTIONS
-#### Zeyu ZHANG NUID 001495690: 
+#### Zeyu ZHANG: 
 - Requested player name and id list from nba.com with nba_api.
 - Requested player total status from nba.com with nba_api.
 - Find the raw data of player information from kaggle.com.
@@ -87,7 +87,7 @@ The database will have six entities such as player_id, allstar_games and player_
 - Audited and cleaned the web scraped data and added key columns to those data. Assigned the correct ID to players that have the same name.
 - Design and Drew the ERD for the conceptual database schema.
 
-#### Xuan SHEN NUID 001422135:
+#### Xuan SHEN:
 - Requested player draft history list from nba.com with nba_api.
 - Requested player shooting data from nba.com with nba_api.
 - Drew the shooting chart for some of the players.
