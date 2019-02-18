@@ -1,8 +1,12 @@
 import pandas as pd
 import tweepy
+from auth import Authentication
 
 
 class TweetProcress:
+    def __init__(self):
+        self.auth = Authentication()
+        self.api = Authentication.load_api(self.auth)
 
     """
     Info we are extracting from tweets
@@ -20,12 +24,11 @@ class TweetProcress:
     10.entities          dict including hashtags (.entities["hashtags"][0]["text"] for hashtags text)
     """
 
-    @staticmethod
-    def request_tweet(screen_name, count, pages):
+    def request_tweet(self, screen_name, count, pages):
         tweets_df = pd.DataFrame(columns=["CREATED_AT", "TWEET_ID", "TWEET", "USER_ID", "USER_NAME", "RETWEET_COUNT",
                                           "FAVORITE_COUNT", "HASHTAGS"])
         temp_tweet = tweets_df.copy()
-        for pages in tweepy.Cursor(api.user_timeline, screen_name=screen_name,count=count).pages(pages):
+        for pages in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name,count=count).pages(pages):
             for tweet in pages:
                 hashtags = []
                 temp_tweet.at[0, "CREATED_AT"] = tweet.created_at

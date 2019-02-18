@@ -12,6 +12,9 @@ Last accessed on Feb.13.2019
 [Timeline](https://developer.twitter.com/en/docs/tweets/timelines/overview)\
 Last accessed on Feb.13.2019
 
+### [NBA players' twitter](https://www.basketball-reference.com/friv/twitter.html)
+Last accessed on Feb.18.2019
+
 
 ### [Pandas documentation](https://pandas.pydata.org/pandas-docs/stable/index.html)
 Last accessed on Jan.22.2019
