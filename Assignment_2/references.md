@@ -6,7 +6,10 @@ Last accessed on Feb.13.2019
 ### [Twitter Developer](https://developer.twitter.com/en/docs)
 Last accessed on Feb.13.2019
 
-### [Twitter Developer tweet-object](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/tweet-object.html)
+### [Twitter Developer Doc](https://developer.twitter.com/en/docs)
+[Tweet Management](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/tweet-object.html)\
+[List Management](https://developer.twitter.com/en/docs/accounts-and-users/create-manage-lists/api-reference/get-lists-members)\
+[Timeline](https://developer.twitter.com/en/docs/tweets/timelines/overview)\
 Last accessed on Feb.13.2019
 
 
