@@ -5,6 +5,7 @@ from auth import Authentication
 
 class TweetProcress:
     def __init__(self):
+        # Authenticating with store token
         self.auth = Authentication()
         self.api = Authentication.load_api(self.auth)
 
@@ -25,11 +26,14 @@ class TweetProcress:
     """
 
     def request_tweet(self, screen_name, count, pages):
+        # tweets_df to store all tweets product
         tweets_df = pd.DataFrame(columns=["CREATED_AT", "TWEET_ID", "TWEET", "USER_ID", "USER_NAME", "RETWEET_COUNT",
                                           "FAVORITE_COUNT", "HASHTAGS"])
+        # temporary data frame to store tweet being processed currently
         temp_tweet = tweets_df.copy()
         for pages in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name,count=count).pages(pages):
             for tweet in pages:
+                # list to store all hashtags
                 hashtags = []
                 temp_tweet.at[0, "CREATED_AT"] = tweet.created_at
                 temp_tweet.at[0, "TWEET_ID"] = tweet.id
@@ -40,6 +44,7 @@ class TweetProcress:
                 temp_tweet.at[0, "FAVORITE_COUNT"] = tweet.favorite_count
                 # Get the numbers of hashtags
                 length = len(tweet.entities["hashtags"])
+                # Iterate through all the hastags
                 for i in range(0, length):
                     # Get the text of each hashtag and add to the hashtags list
                     hashtag = tweet.entities["hashtags"][i]["text"]
