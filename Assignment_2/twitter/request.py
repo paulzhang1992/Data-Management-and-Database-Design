@@ -64,6 +64,7 @@ def fan_tweet():
 if __name__ == "__main__":
     #team_tweet()
     #player_tweet()
+    fan_tweet()
 
 
 
