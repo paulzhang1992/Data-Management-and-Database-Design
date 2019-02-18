@@ -41,9 +41,12 @@ def team_tweet():
 
 
 def player_tweet():
+    # Created data frame to store the tweets
     tweets_player = pd.DataFrame(columns=["CREATED_AT", "TWEET_ID", "TWEET", "USER_ID", "USER_NAME", "RETWEET_COUNT",
                                       "FAVORITE_COUNT", "HASHTAGS"])
+    # Open the csv contains selected 20 players from NBA
     player_df = pd.read_csv("rawData//player//top20_player.csv")
+    # Iterate through each player and scrape their tweets
     for i in range(0, player_df.shape[0]):
         account = player_df.at[i, "TWITTER_ACC"]
         current_player = TweetProcress()
@@ -52,6 +55,7 @@ def player_tweet():
         file = "Tweet "+player_df.at[i,"FULL_NAME"]+".csv"
         current_player_tweets.to_csv("rawData//player//"+file, index=False)
         print(file+" is done")
+    # One single csv contains all the tweets
     tweets_player.to_csv("rawData//player//tweets_player.csv", index=False)
 
 def fan_tweet():
