@@ -5,11 +5,12 @@ class Authentication:
 
     def __init__(self):
         # __consumer_key,__consumer_secret,__access_token,__access_token_secret
+        '''
         self.__consumer_key
         self.__consumer_secret
         self.__access_token
         self.__access_token_secret
-
+        '''
 
     def get_consumer_key(self):
         return self.__consumer_key
