@@ -19,6 +19,9 @@ Last accessed on Feb.18.2019
 ### [Pandas documentation](https://pandas.pydata.org/pandas-docs/stable/index.html)
 Last accessed on Jan.22.2019
 
+### [MySQL Mannul](https://dev.mysql.com/doc/refman/8.0/en/load-data.html)
+Last accessed on Feb.19.2019
+
 ### Tweepy example
 
 MINING FOR TWEETS by ALEXANDER GALEA: [Link](https://galeascience.wordpress.com/2016/03/18/collecting-twitter-data-with-python/)\
