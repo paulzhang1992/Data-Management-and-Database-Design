@@ -24,6 +24,7 @@ def team_tweet():
         team_twitter = team_twitter.append(temp_team)
     # Store the list to csv
     team_twitter = team_twitter.reset_index(drop=True)
+    team_twitter.to_csv("rawData//team//twitter_team.csv", index=False)
     # Iterate through each team and scrape their tweets
     for i in range(0, team_twitter.shape[0]):
         account = team_twitter.at[i, "TWITTER_ACC"]
@@ -81,12 +82,4 @@ if __name__ == "__main__":
     api = Authentication.load_api(auth)
     #team_tweet()
     #player_tweet()
-    fan_tweet()
-
-
-
-
-
-
-
-
+    #fan_tweet()
