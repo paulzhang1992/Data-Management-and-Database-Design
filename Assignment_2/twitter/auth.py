@@ -5,8 +5,8 @@ class Authentication:
 
     def __init__(self):
         # __consumer_key,__consumer_secret,__access_token,__access_token_secret
-        self.__consumer_key = ""
-        self.__consumer_secret = ""
+        self.__consumer_key = "HX9uxhUZC9KUDGZJ0r3xSjP9D"
+        self.__consumer_secret = "9pmfafEHYWWDZKP99NrCjFPqIJ5sU7J9nkseHXnsCfwHy73Twu "
         self.__access_token = ""
         self.__access_token_secret = ""
 
