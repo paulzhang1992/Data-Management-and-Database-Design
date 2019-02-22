@@ -77,6 +77,7 @@ def fan_tweet():
     # One single csv contains all the tweets
     tweets_fan.to_csv("rawData//fan//tweets_fan.csv", index=False)
 
+
 if __name__ == "__main__":
     auth = Authentication()
     api = Authentication.load_api(auth)
