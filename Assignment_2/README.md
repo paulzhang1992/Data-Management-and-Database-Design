@@ -317,6 +317,7 @@ In this part I will explain the details about the project according to all the b
     DESC LIMIT 10;
     ```
     Query result:
+    
     |TIME|TWEET|USER|FAV|RETWEET|
     |:--:|:--:|:--:|:--:|:--:|
     |2017-08-13 15:54:19 |RT @BarackObama: "No one is born hating another person because of the color of his skin or his background or his religion..." https://t.co/…  |LeBron James  |0 |1657292|
@@ -342,6 +343,7 @@ In this part I will explain the details about the project according to all the b
     DESC LIMIT 10;
     ```
     Query result:
+    
     |TIME|TWEET|USER|FAV|RETWEET|
     |:--:|:--:|:--:|:--:|:--:|
     |2017-09-23 15:17:24| U bum @StephenCurry30 already said he ain't going! So therefore ain't no invite. Going to White House was a great honor until you showed up! | LeBron James | 1459233 |625644|
