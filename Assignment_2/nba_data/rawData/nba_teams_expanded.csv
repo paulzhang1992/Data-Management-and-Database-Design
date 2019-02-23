@@ -1,0 +1,40 @@
+ABBREVIATION,CITY,FULL_NAME,ID,NICKNAME,STATE,YEAR_FOUNDED,ACCOUNT_ID,TWITTER_ACC
+ATL,Atlanta,Atlanta Hawks,1610612737,Hawks,Atlanta,1949,17292143,ATLHawks
+BOS,Boston,Boston Celtics,1610612738,Celtics,Massachusetts,1946,18139461,celtics
+BKN,Brooklyn,Brooklyn Nets,1610612751,Nets,New York,1976,18552281,BrooklynNets
+CHA,Charlotte,Charlotte Hornets,1610612766,Hornets,North Carolina,1988,21308488,hornets
+CHI,Chicago,Chicago Bulls,1610612741,Bulls,Illinois,1966,16212685,chicagobulls
+CLE,Cleveland,Cleveland Cavaliers,1610612739,Cavaliers,Ohio,1970,19263978,cavs
+DAL,Dallas,Dallas Mavericks,1610612742,Mavericks,Texas,1980,22185437,dallasmavs
+DEN,Denver,Denver Nuggets,1610612743,Nuggets,Colorado,1976,26074296,nuggets
+DET,Detroit,Detroit Pistons,1610612765,Pistons,Michigan,1948,16727749,DetroitPistons
+GSW,Golden State,Golden State Warriors,1610612744,Warriors,California,1946,26270913,warriors
+HOU,Houston,Houston Rockets,1610612745,Rockets,Texas,1967,19077044,HoustonRockets
+IND,Indiana,Indiana Pacers,1610612754,Pacers,Indiana,1976,19409270,Pacers
+LAC,Los Angeles,Los Angeles Clippers,1610612746,Clippers,California,1970,19564719,LAClippers
+LAL,Los Angeles,Los Angeles Lakers,1610612747,Lakers,California,1948,20346956,Lakers
+MEM,Memphis,Memphis Grizzlies,1610612763,Grizzlies,Tennessee,1995,7117962,memgrizz
+MIA,Miami,Miami Heat,1610612748,Heat,Florida,1988,11026952,MiamiHEAT
+MIL,Milwaukee,Milwaukee Bucks,1610612749,Bucks,Wisconsin,1968,15900167,Bucks
+MIN,Minnesota,Minnesota Timberwolves,1610612750,Timberwolves,Minnesota,1989,24903350,PelicansNBA
+NOP,New Orleans,New Orleans Pelicans,1610612740,Pelicans,Louisiana,2002,20265254,nyknicks
+NYK,New York,New York Knicks,1610612752,Knicks,New York,1946,24925573,okcthunder
+OKC,Oklahoma City,Oklahoma City Thunder,1610612760,Thunder,Oklahoma,1967,19537303,OrlandoMagic
+ORL,Orlando,Orlando Magic,1610612753,Magic,Florida,1989,16201775,sixers
+PHI,Philadelphia,Philadelphia 76ers,1610612755,76ers,Pennsylvania,1949,18481113,Suns
+PHX,Phoenix,Phoenix Suns,1610612756,Suns,Arizona,1968,6395222,trailblazers
+POR,Portland,Portland Trail Blazers,1610612757,Trail Blazers,Oregon,1970,667563,SacramentoKings
+SAC,Sacramento,Sacramento Kings,1610612758,Kings,California,1948,18371803,spurs
+SAS,San Antonio,San Antonio Spurs,1610612759,Spurs,Texas,1976,20196159,Timberwolves
+TOR,Toronto,Toronto Raptors,1610612761,Raptors,Ontario,1995,73406718,Raptors
+UTA,Utah,Utah Jazz,1610612762,Jazz,Utah,1974,18360370,utahjazz
+WAS,Washington,Washington Wizards,1610612764,Wizards,District of Columbia,1961,14992591,WashWizards
+WCP,Washington,Washington Capitols,1610610036,Capitols,District of Columbia,1946,1,
+CST,Chicago,Chicago Stags,1610610025,Stags,Illinois,1946,2,
+THU,Toronto,Toronto Huskies,1610610035,Huskies,Ontario,1946,3,
+BBU,Baltimore,Baltimore Bullets,1610610024,Bullets,District of Columbia,1946,4,
+PIR,Pittsburgh,Pittsburgh Ironmen,1610610031,Ironmen,Pennsylvania,1946,5,
+SLB,St. Louis,St. Louis Bombers,1610610034,Bombers,Missouri,1946,6,
+PRO,Providence,Providence Steamrollers,1610610032,Steamrollers,Rhode ,1946,7,
+IDP,Indianapolis,Indianapolis Jets,1610610029,Jets,Indiana,1948,9,
+IDO,Indianapolis,Indianapolis Olympians,1610610030,Olympians,Indiana,1949,8,
