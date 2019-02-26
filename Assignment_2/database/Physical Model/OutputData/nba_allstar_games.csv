@@ -1,0 +1,68 @@
+GAME_ID,DATE,WINNING_TEAM,WINNING_SCORE,LOSING_TEAM,LOSING_SCORE,VENUE,MVP
+1,1951-03-02,East,111,West,94,"Boston Garden, Boston, MA",Ed Macauley
+2,1952-02-11,East,108,West,91,"Boston Garden, Boston, MA",Paul Arizin
+3,1953-01-13,West,79,East,75,"Allen County War Memorial Coliseum, Fort Wayne, IN",George Mikan
+4,1954-01-21,East,98,West,93,"Madison Square Garden, Manhattan, NY",Bob Cousy
+5,1955-01-18,East,100,West,91,"Madison Square Garden, Manhattan, NY",Bill Sharman
+6,1956-01-24,West,108,East,94,"Blue Cross Arena, Rochester, NY",Bob Pettit
+7,1957-01-15,East,109,West,97,"Boston Garden, Boston, MA",Bob Cousy
+8,1958-01-21,East,130,West,118,"St. Louis Arena, St. Louis, MO",Bob Pettit
+9,1959-01-23,West,124,East,108,"Detroit Olympia, Detroit, MI",Bob PettitElgin Baylor
+10,1960-01-22,East,125,West,115,"Philadelphia Convention Hall and Civic Center, Philadelphia, PA",Wilt Chamberlain
+11,1961-01-17,West,153,East,131,"Oncenter War Memorial Arena, Syracuse, NY",Oscar Robertson
+12,1962-01-16,West,150,East,130,"St. Louis Arena, St. Louis, MO",Bob Pettit
+13,1963-01-16,East,115,West,108,"Los Angeles Memorial Sports Arena, Los Angeles, CA",Bill Russell
+14,1964-01-14,East,111,West,107,"Boston Garden, Boston, MA",Oscar Robertson
+15,1965-01-13,East,124,West,123,"St. Louis Arena, St. Louis, MO",Jerry Lucas
+16,1966-01-11,East,137,West,94,"Cincinnati Gardens, Cincinnati, OH",Adrian Smith
+17,1967-01-10,West,135,East,120,"Cow Palace, Daly City, CA",Rick Barry
+18,1968-01-23,East,144,West,124,"Madison Square Garden, Manhattan, NY",Hal Greer
+19,1969-01-14,East,123,West,112,"Royal Farms Arena, Baltimore, MD",Oscar Robertson
+20,1970-01-20,East,142,West,135,"Spectrum, Philadelphia, PA",Willis Reed
+21,1971-01-12,West,108,East,107,"Valley View Casino Center, San Diego, CA",Lenny Wilkens
+22,1972-01-18,West,112,East,110,"The Forum, Inglewood, CA",Jerry West
+23,1973-01-23,East,104,West,84,"Chicago Stadium, Chicago, IL",Dave Cowens
+24,1974-01-15,West,134,East,123,"KeyArena, Seattle, WA",Bob Lanier
+25,1975-01-14,East,108,West,102,"Arizona Veterans Memorial Coliseum, Phoenix, AZ",Walt Frazier
+26,1976-02-03,East,123,West,109,"Spectrum, Philadelphia, PA",Dave Bing
+27,1977-02-13,West,125,East,124,"UW-Milwaukee Panther Arena, Milwaukee, WI",Julius Erving
+28,1978-02-05,East,133,West,125,"Omni Coliseum, Atlanta, GA",Randy Smith
+29,1979-02-04,West,134,East,129,"Silverdome, Pontiac, MI",David Thompson
+30,1980-02-03,East,144,West,136,"US Airways Arena, Landover, MD",George Gervin
+31,1981-02-01,East,123,West,120,"Richfield Coliseum, Richfield, OH",Tiny Archibald
+32,1982-01-31,East,120,West,118,"Izod Center, East Rutherford, NJ",Larry Bird
+33,1983-02-13,East,132,West,123,"The Forum, Inglewood, CA",Julius Erving
+34,1984-01-29,East,154,West,145,"McNichols Sports Arena, Denver, CO",Isiah Thomas
+35,1985-02-10,West,140,East,129,"RCA Dome, Indianapolis, IN",Ralph Sampson
+36,1986-02-09,East,139,West,132,"Reunion Arena, Dallas, TX",Isiah Thomas
+37,1987-02-08,West,154,East,149,"Kingdome, Seattle, WA",Tom Chambers
+38,1988-02-07,East,138,West,133,"Chicago Stadium, Chicago, IL",Michael Jordan
+39,1989-02-12,West,143,East,134,"Reliant Astrodome, Houston, TX",Karl Malone
+40,1990-02-11,East,130,West,113,"Miami Arena, Miami, FL",Magic Johnson
+41,1991-02-10,East,116,West,114,"Charlotte Coliseum, Charlotte, NC",Charles Barkley
+42,1992-02-09,West,153,East,113,"Amway Arena, Orlando, FL",Magic Johnson
+43,1993-02-21,West,135,East,132,"Vivint Smart Home Arena, Salt Lake City, UT",Karl MaloneJohn Stockton
+44,1994-02-13,East,127,West,118,"Target Center, Minneapolis, MN",Scottie Pippen
+45,1995-02-12,West,139,East,112,"Talking Stick Resort Arena, Phoenix, AZ",Mitch Richmond
+46,1996-02-11,East,129,West,118,"Alamodome, San Antonio, TX",Michael Jordan
+47,1997-02-09,East,132,West,120,"Quicken Loans Arena, Cleveland, OH",Glen Rice
+48,1998-02-08,East,135,West,114,"Madison Square Garden, Manhattan, NY",Michael Jordan
+49,2000-02-13,West,137,East,126,"Oracle Arena, Oakland, CA",Tim DuncanShaquille O'Neal
+50,2001-02-11,East,111,West,110,"Capital One Arena, Washington, DC",Allen Iverson
+51,2002-02-10,West,135,East,120,"Wells Fargo Center, Philadelphia, PA",Kobe Bryant
+52,2003-02-09,West,155,East,145,"State Farm Arena, Atlanta, GA",Kevin Garnett
+53,2004-02-15,West,136,East,132,"Staples Center, Los Angeles, CA",Shaquille O'Neal
+54,2005-02-20,East,125,West,115,"Pepsi Center, Denver, CO",Allen Iverson
+55,2006-02-19,East,122,West,120,"Toyota Center, Houston, TX",LeBron James
+56,2007-02-18,West,153,East,132,"Thomas & Mack Center, Las Vegas, NV",Kobe Bryant
+57,2008-02-17,East,134,West,128,"Smoothie King Center, New Orleans, LA",LeBron James
+58,2009-02-15,West,146,East,119,"Talking Stick Resort Arena, Phoenix, AZ",Kobe BryantShaquille O'Neal
+59,2010-02-14,East,141,West,139,"AT&T Stadium, Arlington, TX",Dwyane Wade
+60,2011-02-20,West,148,East,143,"Staples Center, Los Angeles, CA",Kobe Bryant
+61,2012-02-26,West,152,East,149,"Amway Arena, Orlando, FL",Kevin Durant
+62,2013-02-17,West,143,East,138,"Toyota Center, Houston, TX",Chris Paul
+63,2014-02-16,East,163,West,155,"Smoothie King Center, New Orleans, LA",Kyrie Irving
+64,2015-02-15,West,163,East,158,"Madison Square Garden, Manhattan, NY",Russell Westbrook
+65,2016-02-14,West,196,East,173,"Air Canada Centre, Toronto",Russell Westbrook
+66,2017-02-19,West,192,East,182,"Smoothie King Center, New Orleans, LA",Anthony Davis
+67,2018-02-18,Team LeBron,148,Team Stephen,145,"Staples Center, Los Angeles, CA",LeBron James
