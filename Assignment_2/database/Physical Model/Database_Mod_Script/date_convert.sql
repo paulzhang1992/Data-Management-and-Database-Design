@@ -1,1 +1,0 @@
-select str_to_date(LoginDate,'%d.%m.%Y') as DateFormat from ConvertIntoDateFormat;

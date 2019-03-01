@@ -1,48 +1,9 @@
-# ABSTRACT
-### Assignmnt requirement
-In this assignment, you are assumed to be working for a company called Nerd Analytics and that you are
-completely in charge of the database. There are 2 parts:
-##### Part 1
-Your submission must include:
-- A domain (e.g. games, film, databases, cartoons, etc.)
-- Conceptual models (entities) for a tweet/post, a Social Media user, a person, and a company.
-- Conceptual models (entities) that represent consumers, producers and companies in your chosen domain.
-- Conceptual models (entities) for at least two things specific to the domain (e.g. a game, a film, a
-song, etc.)
-- Relationships that connect the entities.
-- Appropriate attributes and keys.
-- ER diagrams that illustrate the entire conceptual model.
-- The ER diagrams can use standard ER symbols or UML.
-- 7 following questions.
-    1. What are the ranges, data types and format of all of the attributes in your entities?
-    2. When should you use an entity versus attribute? (Example: address of a person could be
-modeled as either)
-    3. When should you use an entity or relationship, and placement of attributes? (Example: a
-manager could be modeled as either)
-    4. How did you choose your keys? Which are unique?
-    5. Did you model hierarchies using the “ISA” design element? Why or why not?
-    6. Were there design alternatives? What are their tradeoffs: entity vs. attribute, entity vs.
-    relationship, binary vs. ternary relationships?
-    7. Where are you going to find real-world data to populate your model?
-##### Part 2
-Your submission must include:
-- Updated ER diagrams that illustrate the entire conceptual model in a form that directly maps to
-SQL. You need to either: incorporate the feedback you are given or respond as to why it isn’t
-needed.
-- SQL and diagram for the physical model that represents the entire conceptual/physical model.
-- SQL that express the queries you are asked to write. Including:<br/>
-    a. What user posted this (e.g. tweet, Facebook post, IG post, etc.)?<br/>
-    b. When did the user post this (e.g. tweet, Facebook post, IG post, etc.)?<br/>
-    c. What posts has this user posted in the past 24 hours?<br/>
-    d. How many post has this user posted in the past 24 hours?<br/>
-    e. What keywords/ hashtags are popular?<br/>
-    f. What posts are popular?
-- At least 5 (10 if two people) distinct use cases of queries that are particular to your domain.
-- SQL expressions that express the 5 (10 if two people) use cases of queries that you write.
-### Topic and Data
-My domain on assignment 2 is about NBA data. Part of my data is from last assignment where I requested with nba_api and scraped from Real GM. 
-Other data is also required for this assignment. Tweets data is acquired with tweepy and I also downloaded about 10,000 entries of NBA game details 
+# Topic and Data
+My domain on assignment 2 is about NBA data. Part of my data is from last assignment where I requested with nba_api and scraped from Real GM.
+Other data is also required for this assignment. Tweets data is acquired with tweepy and I also downloaded about 10,000 entries of NBA game details
 about all 30 teams since 1983.
+
+* * *
 
 # Project Report
 In this part I will explain the details about the project according to all the bullet points given by professor.
@@ -87,27 +48,27 @@ In this part I will explain the details about the project according to all the b
 
 - **7 questions**<br/>
 
-    1. What are the ranges, data types and format of all of the attributes in your entities?<br/>
+    1. *What are the ranges, data types and format of all of the attributes in your entities?*<br/>
         The details of this question can be found in the ER diagram. All the attributes that contain string are designed as text such as name, tweet and location. Where ranges can vary. However, during the building process, some of the strings such as abbreviation for different team is set to VARCHAR(4) since the characters in an abbreviation is no longer than 3. In this case, a sort based on this attribute will become much faster compare to text type. Details of changes will be presented in the ER diagram on physical database model.<br/>
         Numerical values are mostly integer such as block, points, player id and retweet count. The range for play stats are mostly non-negative value that smaller that 100. Where player id can as large as million. One exception is for twitter account id, some of the number is so large that double is needed. Double is also used for attributes like shooting percentage where the range is from 0 to 1.<br/>
-        Date and time is used when their is date involved such as date of an all-star game where the earliest date can be around 1950s. 
+        Date and time is used when their is date involved such as date of an all-star game where the earliest date can be around 1950s.
 
-    2. When should you use an entity versus attribute? (Example: address of a person could be
-        modeled as either)<br/>
+    2. *When should you use an entity versus attribute? (Example: address of a person could be
+        modeled as either)*<br/>
         Entities do have a key attribute are considered as weak entities. That's when it should be split into attributes.
 
-    3. When should you use an entity or relationship, and placement of attributes? (Example: a
-        manager could be modeled as either)<br/>
+    3. *When should you use an entity or relationship, and placement of attributes? (Example: a
+        manager could be modeled as either)*<br/>
         When the attributes can have relation with in them where a relational entities can explain it easier.
 
-    4. How did you choose your keys? Which are unique?<br/>
+    4. *How did you choose your keys? Which are unique?*<br/>
         Primary keys for most entities is a unique ID that are pre generated when acquiring the data. These IDs are verified to be unique during the data auditing process.
         Some entities such as web scraped data was assigned a unique value as primary key manually.
 
-    5. Did you model hierarchies using the “ISA” design element? Why or why not?<br/>
+    5. *Did you model hierarchies using the “ISA” design element? Why or why not?*<br/>
 
-    6. Were there design alternatives? What are their trade-offs: entity vs. attribute, entity vs.
-        relationship, binary vs. ternary relationships?<br/>
+    6. *Were there design alternatives? What are their trade-offs: entity vs. attribute, entity vs.
+        relationship, binary vs. ternary relationships?*<br/>
 
         The original design is to use record id instead of combination of two values as primary key for all-star roaster. This way it will consume more space from server and query some extra data that is not useful.
 
@@ -115,10 +76,13 @@ In this part I will explain the details about the project according to all the b
 
         Hashtags was stored as a list along side with tweets. However, during the query of counting hashtags, the lack of ability to handle string for MySQL made it very difficult. I then switched to a new design where hashtags are store in an independent entity where the tweet id is the foreign key. 
 
-    7. Where are you going to find real-world data to populate your model?<br/>
-
+    7. *Where are you going to find real-world data to populate your model?*<br/>
         Part of my data is from last assignment where I requested with nba_api and scraped from Real GM.<br/>
         Other data is also required for this assignment. Tweets data is acquired with tweepy and I also downloaded about 10,000 entries of NBA game details about all 30 teams since 1983.
+
+
+* * *
+
 
 #### Part 2 Physical Stage
 
@@ -149,7 +113,7 @@ In this part I will explain the details about the project according to all the b
     -- Looking for tweet made by nba teams with similar pattern
     -- Return USER_NAME
     SELECT USER_NAME FROM tweets
-      WHERE TYPE = "team" 
+      WHERE TYPE = "team"
      		AND TWEET like "Clear the runway for %" ;
     ```
     This will return something like this:
@@ -269,7 +233,7 @@ In this part I will explain the details about the project according to all the b
                AND USER_NAME = "New Orleans Pelicans")
       GROUP BY USER_NAME;
      ```
-    Query result: 
+    Query result:
 
     | TWEET | USER_NAME |
     | :-----: |:-----: |
@@ -281,8 +245,8 @@ In this part I will explain the details about the project according to all the b
     -- Look for amount of all hashtage with descending order
     -- Return count of 10 most popular hastags
     SELECT COUNT(*), HASHTAG FROM hashtags
-    GROUP BY HASHTAG 
-    ORDER BY COUNT(*) DESC 
+    GROUP BY HASHTAG
+    ORDER BY COUNT(*) DESC
     LIMIT 10;
     ```
 
@@ -327,10 +291,10 @@ In this part I will explain the details about the project according to all the b
     |2017-08-13 15:54:21 |RT @BarackObama: "People must learn to hate, and if they can learn to hate, they can be taught to love..." | LeBron James | 0| 478461|
     |2017-08-13 00:29:28 |RT @BarackObama: "People must learn to hate, and if they can learn to hate, they can be taught to love..." | DWade| 0| 478461|
 
-    From this result we can see that order by retweet results in some high retweet count with 0 favorite. This means that all these tweet are retweet by the players or fans. 
+    From this result we can see that order by retweet results in some high retweet count with 0 favorite. This means that all these tweet are retweet by the players or fans.
 
     We are going to do another query order by fav.
-    
+
     ```mysql
     -- Show tweets with popularity where popularity is defined with like and retweet
     -- Return Tweet and like, retweey count in descending order
@@ -339,7 +303,7 @@ In this part I will explain the details about the project according to all the b
     DESC LIMIT 10;
     ```
     Query result:
-    
+
     | TIME     |  TWEET   |     USER  |   FAV    |  RETWEET  |
     |:--------:|:--------:|:---------:|:--------:|:---------:|
     |2017-09-23 15:17:24| U bum @StephenCurry30 already said he ain't going! So therefore ain't no invite. Going to White House was a great honor until you showed up! | LeBron James | 1459233 |625644|
@@ -354,12 +318,200 @@ In this part I will explain the details about the project according to all the b
     |2018-07-02 01:10:36 |Welcome to the family @KingJames  #lakers4life #striveforgreatness @JeanieBuss @MagicJohnson and RP well done!!! 🙌🏾 |Kobe Bryant |276139  |126723|
 
     From the result we can see that LeBron James is one of the most popular player on twitter where his tweet about white house is the most popular tweet in my database.
-    
-
-
 - At least 5 (10 if two people) distinct use cases of queries that are particular to your domain.<br/>
+1. Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.
+
 
 - SQL expressions that express the 5 (10 if two people) use cases of queries that you write.<br/>
+1. Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.<br/>
+	```mysql
+    -- Create view of player enter the league after 1995. join with draft history and player id.
+    CREATE OR REPLACE VIEW stats_post_1995 AS
+    SELECT
+    	pi1995.FULL_NAME, prt.PLAYER_ID,
+    -- Game played
+    	prt.GP,
+    -- Game Started
+    	prt.GS,
+    -- Min played
+    	prt.MIN,
+    -- Field goal made
+    	prt.FGM,
+    -- Field goal attempt
+    	prt.FGA,
+    -- Three pointer made
+    	prt.FG3M,
+    -- Three pointer attempt
+    	prt.FG3A,
+    -- Free throw made
+    	prt.FTM,
+    -- Free throw attempt
+        prt.FTA,
+    -- Offensive rebound
+    	prt.OREB,
+    -- Defensive rebound
+    	prt.DREB,
+    -- Assist
+    	prt.AST,
+    -- Block
+    	prt.BLK,
+    -- Turn over
+    	prt.TOV,
+    -- Personal foul
+    	prt.PF,
+    -- Point
+    	prt.PTS
+    FROM player_regular_totalstats prt
+    INNER JOIN
+    	-- pi1995 are players been drafted after 1995
+    	(SELECT pi.PLAYER_ID,pi.FULL_NAME,dh.SEASON FROM draft_history dh
+         LEFT OUTER JOIN player_id pi
+         ON dh.PLAYER_ID = pi.PLAYER_ID
+         WHERE dh.SEASON >= 1995) pi1995
+    ON prt.PLAYER_ID = pi1995.PLAYER_ID;
+
+    -- Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.
+    SELECT FULL_NAME, FG3M, FG3A,
+           -- Three pointer percentage =  made/attempts
+           FG3M/FG3A F3PCT,
+           PTS FROM stats_post_1995
+    WHERE FG3A >= 100 ORDER BY F3PCT DESC LIMIT 10;
+	```
+	Query result:
+	
+    | FULL_NAME     | FG3M | FG3A | F3PCT  | PTS   |
+    | :---: | :---: | :---: | :---: | :---: |
+    | Stephen Curry | 2313 | 5281 | 0.4380 | 15448 |
+    | Jason Kapono  |  457 | 1054 | 0.4336 |  3398 |
+    | Kyle Korver   | 2293 | 5316 | 0.4313 | 11318 |
+    | Steve Novak   |  575 | 1337 | 0.4301 |  2177 |
+    | Steve Nash    | 1685 | 3939 | 0.4278 | 17387 |
+    | Buddy Hield   |  473 | 1120 | 0.4223 |  2854 |
+    | Joe Harris    |  367 |  878 | 0.4180 |  1977 |
+    | Klay Thompson | 1684 | 4035 | 0.4173 | 11298 |
+    | Matt Bonner   |  797 | 1923 | 0.4145 |  4632 |
+    | Monte Morris  |   48 |  116 | 0.4138 |   440 |
+	The results shows taht the player has highest three pointer shooting percentage is Stephen Curry with 43.38%. Other player with in the top 10 are shown in the table as well.
+2. Find the most active player on twitter with their popularities.
+	```mysql
+    -- See how many tweets each player tweeted
+    SELECT USER_NAME,COUNT(*) FROM tweets WHERE TYPE='player'
+    GROUP BY USER_NAME ORDER BY COUNT(*) DESC LIMIT 10;
+    ```
+    Query result:
+    
+    | USER_NAME         | COUNT(*) |
+    | :---: | :---:|
+    | Stephen Curry     |     3242 |
+    | Russell Westbrook |     3229 |
+    | Chris Paul        |     3223 |
+    | James Harden      |     3222 |
+    | LeBron James      |     3211 |
+    | DWade             |     3211 |
+    | Kevin Durant      |     3197 |
+    | Kyrie Irving      |     3174 |
+    | Paul George       |     3142 |
+    | Luka Doncic       |     3140 |
+	```mysql
+    -- Count favorites each player get
+    SELECT USER_NAME,SUM(FAVORITE_COUNT) FROM tweets WHERE TYPE='player'
+    GROUP BY USER_NAME ORDER BY SUM(FAVORITE_COUNT) DESC LIMIT 10;
+    ```
+    Query result:
+    
+    | USER_NAME         | SUM(FAVORITE_COUNT) |
+    | :---: | :---: |
+    | LeBron James      |            35210565 |
+    | Stephen Curry     |            15323811 |
+    | Kobe Bryant       |            12060632 |
+    | DWade             |             9609490 |
+    | Joel Embiid       |             9277202 |
+    | Kevin Durant      |             4861925 |
+    | Russell Westbrook |             3755011 |
+    | Chris Paul        |             3644322 |
+    | James Harden      |             2275646 |
+    | Luka Doncic       |             2148634 |
+    ```mysql
+    SELECT USER_NAME,COUNT(*),SUM(FAVORITE_COUNT),SUM(FAVORITE_COUNT)/COUNT(*) FAVORITE_PER_TWEET FROM tweets WHERE TYPE='player'
+    GROUP BY USER_NAME ORDER BY FAVORITE_PER_TWEET DESC LIMIT 10;
+    ```
+    Query result:
+    
+    | USER_NAME             | COUNT(*) | SUM(FAVORITE_COUNT) | FAVORITE_PER_TWEET |
+    | :---: |:---: |:---: |:---: |
+    | LeBron James          |     3211 |            35210565 |         10965.6073 |
+    | Derrick Rose          |       73 |              550598 |          7542.4384 |
+    | Kobe Bryant           |     1623 |            12060632 |          7431.0733 |
+    | Stephen Curry         |     3242 |            15323811 |          4726.6536 |
+    | Joel Embiid           |     2566 |             9277202 |          3615.4334 |
+    | DWade                 |     3211 |             9609490 |          2992.6783 |
+    | Kevin Durant          |     3197 |             4861925 |          1520.7773 |
+    | klay thompson         |      549 |              794165 |          1446.5665 |
+    | Giannis Antetokounmpo |     1079 |             1430651 |          1325.9045 |
+    | Russell Westbrook     |     3229 |             3755011 |          1162.9021 |
+    The first query shows that active players do not varies too much in terms of quantities. Stephen Curry tweeted most tweets where the top 5 active players have about the same amount of tweets.
+    Order the players by average likes they get on their each tweet. It's not difficult to spot that LeBron James is the most popular player among all the player in my database.
+
+3. Find what hashtag each nba player uses most frequently.
+	```mysql
+    -- Create view for each hashtag frequency by username
+    CREATE OR REPLACE VIEW hashtag_frequency AS
+    SELECT HASHTAG,t.USER_NAME,MAX(t.TYPE) TYPE,COUNT(*) times  FROM hashtags
+      LEFT JOIN tweets t on hashtags.TWEET_ID = t.TWEET_ID
+    GROUP BY HASHTAG,USER_NAME;
+    -- Show first 10 rows of view
+    SELECT* FROM hashtag_frequency LIMIT 10;
+	```
+    Query result:
+    
+    | HASHTAG              | USER_NAME       | TYPE | times |
+    | :---: |:---: |:---: |:---: |
+    | WeTheNorth           | Toronto Raptors | team |  1623 |
+    | NBAAllStar           | Toronto Raptors | team |   106 |
+    | KawhiLeonard         | Toronto Raptors | team |    25 |
+    | OGSeason7            | Toronto Raptors | team |    36 |
+    | ThisIsWhyWePlay      | Toronto Raptors | team |    35 |
+    | MtnDew3PT            | Toronto Raptors | team |    17 |
+    | StateFarmSaturday    | Toronto Raptors | team |     2 |
+    | KyleLowry            | Toronto Raptors | team |    24 |
+    | TeamGiannis          | Toronto Raptors | team |     2 |
+    | MTNDEWICERisingStars | Toronto Raptors | team |     6 |
+    Now find the most frequent hashtag for each player
+    ```mysql
+    -- Show max frequency of hashtags for each player
+    SELECT maxfre.USER_NAME,hf.HASHTAG, maxfre.times FROM hashtag_frequency hf
+      INNER JOIN (
+          -- Find max appearance for each player
+          SELECT USER_NAME, MAX(times) times FROM hashtag_frequency hf WHERE TYPE = 'player'GROUP BY USER_NAME) maxfre
+        ON (hf.times=maxfre.times AND hf.USER_NAME = maxfre.USER_NAME)
+    ORDER BY hf.times DESC;
+    ```
+    Query result:
+    
+    | USER_NAME             | HASHTAG            | times |
+    | :---:|  :---:|  :---:| 
+    | Russell Westbrook     | whynot             |  2655 |
+    | Stephen Curry         | DubNation          |   816 |
+    | LeBron James          | Striveforgreatness |   786 |
+    | James Harden          | ThunderUp          |   564 |
+    | Luka Doncic           | halamadrid         |   507 |
+    | Jayson Tatum          | Duke               |   393 |
+    | Joel Embiid           | kubball            |   288 |
+    | Gordon Hayward        | improveeveryday    |   287 |
+    | Carmelo Anthony       | STAYME7O           |   270 |
+    | Paul George           | PacerNation        |   246 |
+    | Kevin Durant          | KDIV               |   181 |
+    | DWade                 | OneLastDance       |   154 |
+    | Paul Pierce           | FitClub34          |   145 |
+    | Kyrie Irving          | UncleDrew          |   113 |
+    | Jaylen Brown          | pause              |   106 |
+    | Chris Paul            | TeamCP3            |    92 |
+    | Kobe Bryant           | MambaMentality     |    73 |
+    | klay thompson         | Dubnation          |    61 |
+    | Giannis Antetokounmpo | NBAVote            |    49 |
+    | Derrick Rose          | TheReturn          |    34 |
+    From the query result we can tell Russell Westbrook has the highest frequency of a hashtag named 'whynot'. This should be his signature shoes' name. This happened to other players as well. For example, 'DubNation' is a nick name for his team where 'TEAMCP3' is Chris Paul's brand. Seems famous players tend to present their brand or team most often.
+* * *
 
 # References
 #### [tweepy](https://tweepy.readthedocs.io/en/v3.5.0/index.html)
@@ -389,6 +541,8 @@ Last accessed on Feb.13.2019
 #### Python tutorial
 Python Tutorial from : [Link](https://www.w3schools.com/python/python_operators.asp)<br/>
 Last accessed on Jan.19.2019
+
+* * *
 
 # License
 Copyright <2019> \<Zeyu Zhang>
