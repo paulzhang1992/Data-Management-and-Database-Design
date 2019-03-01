@@ -391,6 +391,7 @@ In this part I will explain the details about the project according to all the b
     | Klay Thompson | 1684 | 4035 | 0.4173 | 11298 |
     | Matt Bonner   |  797 | 1923 | 0.4145 |  4632 |
     | Monte Morris  |   48 |  116 | 0.4138 |   440 |
+    
 	The results shows taht the player has highest three pointer shooting percentage is Stephen Curry with 43.38%. Other player with in the top 10 are shown in the table as well.
 2. Find the most active player on twitter with their popularities.
 	```mysql
@@ -412,6 +413,7 @@ In this part I will explain the details about the project according to all the b
     | Kyrie Irving      |     3174 |
     | Paul George       |     3142 |
     | Luka Doncic       |     3140 |
+    
 	```mysql
     -- Count favorites each player get
     SELECT USER_NAME,SUM(FAVORITE_COUNT) FROM tweets WHERE TYPE='player'
@@ -431,6 +433,7 @@ In this part I will explain the details about the project according to all the b
     | Chris Paul        |             3644322 |
     | James Harden      |             2275646 |
     | Luka Doncic       |             2148634 |
+    
     ```mysql
     SELECT USER_NAME,COUNT(*),SUM(FAVORITE_COUNT),SUM(FAVORITE_COUNT)/COUNT(*) FAVORITE_PER_TWEET FROM tweets WHERE TYPE='player'
     GROUP BY USER_NAME ORDER BY FAVORITE_PER_TWEET DESC LIMIT 10;
@@ -449,6 +452,7 @@ In this part I will explain the details about the project according to all the b
     | klay thompson         |      549 |              794165 |          1446.5665 |
     | Giannis Antetokounmpo |     1079 |             1430651 |          1325.9045 |
     | Russell Westbrook     |     3229 |             3755011 |          1162.9021 |
+    
     The first query shows that active players do not varies too much in terms of quantities. Stephen Curry tweeted most tweets where the top 5 active players have about the same amount of tweets.
     Order the players by average likes they get on their each tweet. It's not difficult to spot that LeBron James is the most popular player among all the player in my database.
 
@@ -476,6 +480,7 @@ In this part I will explain the details about the project according to all the b
     | KyleLowry            | Toronto Raptors | team |    24 |
     | TeamGiannis          | Toronto Raptors | team |     2 |
     | MTNDEWICERisingStars | Toronto Raptors | team |     6 |
+    
     Now find the most frequent hashtag for each player
     ```mysql
     -- Show max frequency of hashtags for each player
@@ -510,6 +515,7 @@ In this part I will explain the details about the project according to all the b
     | klay thompson         | Dubnation          |    61 |
     | Giannis Antetokounmpo | NBAVote            |    49 |
     | Derrick Rose          | TheReturn          |    34 |
+    
     From the query result we can tell Russell Westbrook has the highest frequency of a hashtag named 'whynot'. This should be his signature shoes' name. This happened to other players as well. For example, 'DubNation' is a nick name for his team where 'TEAMCP3' is Chris Paul's brand. Seems famous players tend to present their brand or team most often.
 * * *
 
