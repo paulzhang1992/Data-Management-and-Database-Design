@@ -60,16 +60,22 @@ In this part I will explain the details about the project according to all the b
     2. *When should you use an entity versus attribute? (Example: address of a person could be
         modeled as either)*<br/>
         Entities do have a key attribute are considered as weak entities. That's when it should be split into attributes.
+        For my case tweet account for each NBA teams do not have a strong relationship since the team entity is trying to have relation with games and players.
+        I decide the put them into a separate entity where twitter account information for all parties are stored.
 
     3. *When should you use an entity or relationship, and placement of attributes? (Example: a
         manager could be modeled as either)*<br/>
         When the attributes can have relation with in them where a relational entities can explain it easier.
+        Another case is when multiple information is stored in one cell. For example, hashtags for tweets, it is very difficult to deal with.
+        This is why I choose to build a entity for hashtags which have a one to many relationship with the entity for tweets.
 
     4. *How did you choose your keys? Which are unique?*<br/>
         Primary keys for most entities is a unique ID that are pre generated when acquiring the data. These IDs are verified to be unique during the data auditing process.
         Some entities such as web scraped data was assigned a unique value as primary key manually.
 
     5. *Did you model hierarchies using the “ISA” design element? Why or why not?*<br/>
+        Yes, but only for all-star players. That is the only place where an all-star player is a nba player.
+        There are only is in relationships for other part of my database such as hashtags is in tweets. player is in draft history  etc.
 
     6. *Were there design alternatives? What are their trade-offs: entity vs. attribute, entity vs.
         relationship, binary vs. ternary relationships?*<br/>
@@ -326,9 +332,12 @@ In this part I will explain the details about the project according to all the b
 
     From the result we can see that LeBron James is one of the most popular player on twitter where his tweet about white house is the most popular tweet in my database.
 - At least 5 (10 if two people) distinct use cases of queries that are particular to your domain.<br/>
+The following five use cases are designed for this assignment
 1. Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.
-2. Find the most active player on twitter with their popularity.
-3. Find what hashtag each nba player uses most frequently.
+2. Find players had most all-star appearances.
+3. Find team with most wins since 1983
+4. Find the most active player on twitter with their popularity.
+5. Find what hashtag each nba player uses most frequently.
 
 - SQL expressions that express the 5 (10 if two people) use cases of queries that you write.<br/>
 1. Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.<br/>
@@ -402,7 +411,116 @@ In this part I will explain the details about the project according to all the b
     | Monte Morris  |   48 |  116 | 0.4138 |   440 |
     
 	The results shows taht the player has highest three pointer shooting percentage is Stephen Curry with 43.38%. Other player with in the top 10 are shown in the table as well.
-2. Find the most active player on twitter with their popularity.
+2. Find players had most all-star appearances.
+    ```mysql
+    -- Use case 4
+    -- Most All-star appearances
+    SELECT pi.FULL_NAME, allstar.* 
+    FROM player_id pi 
+      Right OUTER JOIN 
+      -- Selecting player who has been in all star game for more 10 times
+      (SELECT COUNT(*) appearances, PLAYER_ID 
+      FROM allstar_roaster 
+      GROUP BY PLAYER_ID 
+      HAVING COUNT(*) >= 10) allstar
+    On pi.PLAYER_ID = allstar.PLAYER_ID
+    ORDER BY allstar.appearances DESC ;
+    ```  
+    Query result:
+    
+    | FULL_NAME           | appearances | PLAYER_ID |
+    | :-----------------: | :---------: | :-------: |
+    | Kareem Abdul-Jabbar |          18 |     76003 |
+    | Kobe Bryant         |          15 |       977 |
+    | Tim Duncan          |          15 |      1495 |
+    | Kevin Garnett       |          14 |       708 |
+    | LeBron James        |          14 |      2544 |
+    | Michael Jordan      |          13 |       893 |
+    | Bob Cousy           |          13 |    600003 |
+    | Wilt Chamberlain    |          13 |     76375 |
+    | Dirk Nowitzki       |          13 |      1717 |
+    | John Havlicek       |          13 |     76970 |
+    | Elvin Hayes         |          12 |     76979 |
+    | Oscar Robertson     |          12 |    600015 |
+    | Hakeem Olajuwon     |          12 |       165 |
+    | Karl Malone         |          12 |       252 |
+    | Bill Russell        |          12 |     78049 |
+    | Shaquille O'Neal    |          12 |       406 |
+    | Jerry West          |          12 |     78497 |
+    | Dwyane Wade         |          11 |      2548 |
+    | Magic Johnson       |          11 |     77142 |
+    | Moses Malone        |          11 |     77449 |
+    | Elgin Baylor        |          11 |     76127 |
+    | Bob Pettit          |          11 |     77847 |
+    | Julius Erving       |          11 |     76681 |
+    | Dolph Schayes       |          11 |     78076 |
+    | Isiah Thomas        |          11 |     78318 |
+    | Carmelo Anthony     |          10 |      2546 |
+    | Ray Allen           |          10 |       951 |
+    | Larry Bird          |          10 |      1449 |
+    | John Stockton       |          10 |       304 |
+    | Paul Pierce         |          10 |      1718 |
+    | Hal Greer           |          10 |     76882 |
+    | David Robinson      |          10 |       764 |
+    
+3. Find team with most wins since 1983
+    ```mysql
+    -- Use case 3
+    
+    -- Team with most wins
+    SELECT TEAM_NAME,COUNT(*) WINS,SUM(PTS) TotalPTS, SUM(REB) TotalREB,SUM(AST) TotalAST,
+           SUM(STL) TotalSTL, SUM(BLK) TotalBLK, SUM(TOV) TotalTOV, MIN(GAME_DATE) Since
+    FROM games_by_teams gt WHERE WL = "W"
+    GROUP BY TEAM_NAME, WL
+    ORDER BY WINS Desc;
+    ```
+    Query result:
+    
+    | TEAM_NAME                         | WINS | TotalPTS | TotalREB | TotalAST | TotalSTL | TotalBLK | TotalTOV | Since      |
+    | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
+    | San Antonio Spurs                 | 2090 |   218872 |    92521 |    50713 |    16675 |    12598 |    29181 | 1983-10-30 |
+    | Los Angeles Lakers                | 2046 |   223253 |    91426 |    52656 |    17122 |    11889 |    29520 | 1983-10-28 |
+    | Boston Celtics                    | 1866 |   200454 |    81352 |    47252 |    16042 |     9684 |    26796 | 1983-10-29 |
+    | Houston Rockets                   | 1862 |   199734 |    83524 |    45119 |    15648 |    10635 |    27904 | 1983-10-29 |
+    | Portland Trail Blazers            | 1791 |   192699 |    80347 |    43343 |    14813 |     9132 |    25827 | 1983-10-28 |
+    | Detroit Pistons                   | 1771 |   183311 |    78267 |    41413 |    13620 |     9025 |    23941 | 1983-10-28 |
+    | Phoenix Suns                      | 1729 |   190810 |    76020 |    44671 |    14484 |     9363 |    25241 | 1983-11-03 |
+    | Indiana Pacers                    | 1679 |   175531 |    74607 |    40114 |    13620 |     8844 |    24037 | 1983-11-01 |
+    | Atlanta Hawks                     | 1591 |   167851 |    70125 |    38179 |    13709 |     8641 |    22732 | 1983-10-29 |
+    | Utah Jazz                         | 1294 |   137101 |    56090 |    34749 |    11258 |     8182 |    19780 | 1983-11-03 |
+    | Orlando Magic                     | 1273 |   133501 |    56167 |    29334 |    10148 |     6837 |    18227 | 1989-11-06 |
+    | Sacramento Kings                  | 1253 |   134194 |    55602 |    30323 |    10665 |     6378 |    18338 | 1985-10-31 |
+    | Chicago Bulls                     | 1228 |   129626 |    54318 |    31780 |    10879 |     6307 |    17647 | 1983-10-29 |
+    | Seattle SuperSonics               | 1170 |   126530 |    50108 |    29280 |    11447 |     5722 |    17116 | 1983-10-30 |
+    | Cleveland Cavaliers               | 1114 |   118842 |    48525 |    28162 |     9133 |     6154 |    15436 | 1983-11-02 |
+    | Milwaukee Bucks                   | 1088 |   117762 |    46731 |    27684 |    10024 |     5764 |    15770 | 1983-10-28 |
+    | Golden State Warriors             | 1068 |   122458 |    48445 |    28764 |     9902 |     6284 |    16308 | 1983-10-28 |
+    | Minnesota Timberwolves            | 1052 |   109027 |    45954 |    25838 |     8368 |     5754 |    14307 | 1989-11-10 |
+    | Los Angeles Clippers              | 1052 |   110861 |    46126 |    25570 |     8974 |     6503 |    15505 | 1984-10-27 |
+    | New Jersey Nets                   | 1050 |   109675 |    46956 |    25442 |     9221 |     5924 |    15508 | 1983-10-28 |
+    | Philadelphia 76ers                | 1033 |   110956 |    46629 |    25062 |     9930 |     6305 |    16116 | 1983-10-28 |
+    | Dallas Mavericks                  | 1014 |   110194 |    44807 |    24366 |     8019 |     5225 |    13749 | 1983-10-29 |
+    | Miami Heat                        |  976 |    99716 |    42731 |    21716 |     7499 |     5314 |    13698 | 1988-12-14 |
+    | Denver Nuggets                    |  952 |   107448 |    43681 |    24964 |     8386 |     5967 |    13776 | 1983-10-28 |
+    | New York Knicks                   |  926 |    97265 |    39712 |    20830 |     7671 |     4180 |    13536 | 1983-10-28 |
+    | Washington Wizards                |  846 |    88239 |    36716 |    19352 |     7163 |     4241 |    11560 | 1997-11-03 |
+    | Memphis Grizzlies                 |  802 |    81217 |    34457 |    17460 |     6847 |     4419 |    10776 | 2001-11-17 |
+    | Charlotte Hornets                 |  779 |    82393 |    34118 |    19674 |     6462 |     3980 |    10484 | 1988-11-08 |
+    | Toronto Raptors                   |  667 |    70532 |    28638 |    14825 |     5113 |     3347 |     8597 | 2006-01-29 |
+    | Oklahoma City Thunder             |  638 |    69081 |    29187 |    13895 |     5437 |     3934 |     9092 | 2008-10-13 |
+    | Washington Bullets                |  476 |    52584 |    20876 |    12038 |     4143 |     2919 |     7405 | 1983-11-03 |
+    | New Orleans Hornets               |  387 |    38577 |    16538 |     8631 |     3111 |     1763 |     4862 | 2002-10-30 |
+    | Charlotte Bobcats                 |  328 |    33154 |    13904 |     7395 |     2575 |     1843 |     4489 | 2004-10-22 |
+    | Brooklyn Nets                     |  271 |    28833 |    12059 |     6118 |     2159 |     1265 |     3827 | 2012-07-13 |
+    | New Orleans Pelicans              |  252 |    27858 |    11272 |     6239 |     2101 |     1558 |     3295 | 2013-07-12 |
+    | LA Clippers                       |  202 |    22588 |     9083 |     4809 |     1640 |     1043 |     2597 | 2015-07-07 |
+    | Vancouver Grizzlies               |  101 |    10145 |     4384 |     2437 |      873 |      496 |     1522 | 1995-11-03 |
+    | New Orleans/Oklahoma City Hornets |   77 |     7707 |     3383 |     1551 |      539 |      343 |      968 | 2005-11-01 |
+    | Kansas City Kings                 |   69 |     8070 |     2859 |     1921 |      540 |      279 |     1113 | 1983-11-01 |
+    | San Diego Clippers                |   30 |     3510 |     1351 |      791 |      200 |      147 |      499 | 1983-10-29 |
+     
+     San Antonio Spurs is the team with most wins where LA lakers is the best scoring team since 1983.  
+4. Find the most active player on twitter with their popularity.
 	```mysql
     -- See how many tweets each player tweeted
     SELECT USER_NAME,COUNT(*) FROM tweets WHERE TYPE='player'
@@ -465,7 +583,7 @@ In this part I will explain the details about the project according to all the b
     The first query shows that active players do not varies too much in terms of quantities. Stephen Curry tweeted most tweets where the top 5 active players have about the same amount of tweets.
     Order the players by average likes they get on their each tweet. It's not difficult to spot that LeBron James is the most popular player among all the player in my database.
 
-3. Find what hashtag each nba player uses most frequently.
+5. Find what hashtag each nba player uses most frequently.
 	```mysql
     -- Create view for each hashtag frequency by username
     CREATE OR REPLACE VIEW hashtag_frequency AS
@@ -527,7 +645,12 @@ In this part I will explain the details about the project according to all the b
     
     From the query result we can tell Russell Westbrook has the highest frequency of a hashtag named 'whynot'. This should be his signature shoes' name. 
     This happened to other players as well. For example, 'DubNation' is a nick name for his team where 'TEAMCP3' is Chris Paul's brand. Seems famous players tend to present their brand or team most often.
-    
+
+
+
+
+
+ 
 * * *
 
 # References

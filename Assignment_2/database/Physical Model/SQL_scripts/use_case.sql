@@ -1,7 +1,5 @@
 -- Use case 1
-
 -- Create view of player enter the league after 1995. join with draft history and player id.
-
 CREATE OR REPLACE VIEW stats_post_1995 AS
   SELECT
          pi1995.FULL_NAME,
@@ -46,7 +44,6 @@ CREATE OR REPLACE VIEW stats_post_1995 AS
     ON prt.PLAYER_ID = pi1995.PLAYER_ID;
 
 -- Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.
-
 SELECT FULL_NAME, FG3M, FG3A,
        -- Three pointer percentage =  made/attempts
        FG3M/FG3A F3PCT,
@@ -54,23 +51,60 @@ SELECT FULL_NAME, FG3M, FG3A,
 WHERE FG3A >= 100 ORDER BY F3PCT DESC LIMIT 10;
 
 
+
+
+
+
 -- Use case 2
+-- Most All-star appearances
+SELECT pi.FULL_NAME, allstar.*
+FROM player_id pi
+  Right OUTER JOIN
+  -- Selecting player who has been in all star game for more 10 times
+  (SELECT COUNT(*) appearances, PLAYER_ID
+  FROM allstar_roaster
+  GROUP BY PLAYER_ID
+  HAVING COUNT(*) >= 10) allstar
+On pi.PLAYER_ID = allstar.PLAYER_ID
+ORDER BY allstar.appearances DESC ;
+
+
+
+
+
+-- Use case 3
+-- Team with most wins
+SELECT TEAM_NAME,COUNT(*) WINS,SUM(PTS) TotalPTS, SUM(REB) TotalREB,SUM(AST) TotalAST,
+       SUM(STL) TotalSTL, SUM(BLK) TotalBLK, SUM(TOV) TotalTOV, MIN(GAME_DATE) Since
+FROM games_by_teams gt WHERE WL = "W"
+GROUP BY TEAM_NAME, WL
+ORDER BY WINS Desc;
+
+
+
+
+
+
+-- Use case 4
 -- See how many tweets each player tweeted
 SELECT USER_NAME,COUNT(*) FROM tweets WHERE TYPE='player'
 GROUP BY USER_NAME ORDER BY COUNT(*) DESC LIMIT 10;
 
-
 -- Count favorites each player get
 SELECT USER_NAME,SUM(FAVORITE_COUNT) FROM tweets WHERE TYPE='player'
 GROUP BY USER_NAME ORDER BY SUM(FAVORITE_COUNT) DESC LIMIT 10;
-
 
 -- Present with likes/tweet
 SELECT USER_NAME,COUNT(*),SUM(FAVORITE_COUNT),SUM(FAVORITE_COUNT)/COUNT(*) FAVORITE_PER_TWEET FROM tweets WHERE TYPE='player'
 GROUP BY USER_NAME ORDER BY FAVORITE_PER_TWEET DESC LIMIT 10;
 
 
--- Use case 3
+
+
+
+
+
+-- Use case 5
 -- Create view for each hashtag frequency by username
 CREATE OR REPLACE VIEW hashtag_frequency AS
 SELECT HASHTAG,t.USER_NAME,MAX(t.TYPE) TYPE,COUNT(*) times  FROM hashtags
@@ -78,7 +112,6 @@ SELECT HASHTAG,t.USER_NAME,MAX(t.TYPE) TYPE,COUNT(*) times  FROM hashtags
 GROUP BY HASHTAG,USER_NAME;
 
 SELECT* FROM hashtag_frequency LIMIT 10;
-
 
 -- Show max frequency of hashtags for each player
 SELECT maxfre.USER_NAME,hf.HASHTAG, maxfre.times FROM hashtag_frequency hf
