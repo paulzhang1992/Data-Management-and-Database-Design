@@ -49,8 +49,12 @@ In this part I will explain the details about the project according to all the b
 - **7 questions**<br/>
 
     1. *What are the ranges, data types and format of all of the attributes in your entities?*<br/>
-        The details of this question can be found in the ER diagram. All the attributes that contain string are designed as text such as name, tweet and location. Where ranges can vary. However, during the building process, some of the strings such as abbreviation for different team is set to VARCHAR(4) since the characters in an abbreviation is no longer than 3. In this case, a sort based on this attribute will become much faster compare to text type. Details of changes will be presented in the ER diagram on physical database model.<br/>
-        Numerical values are mostly integer such as block, points, player id and retweet count. The range for play stats are mostly non-negative value that smaller that 100. Where player id can as large as million. One exception is for twitter account id, some of the number is so large that double is needed. Double is also used for attributes like shooting percentage where the range is from 0 to 1.<br/>
+        The details of this question can be found in the ER diagram. All the attributes that contain string are designed as text such as name, tweet and location. Where ranges can vary. 
+        However, during the building process, some of the strings such as abbreviation for different team is set to VARCHAR(4) since the characters in an abbreviation is no longer than 3. 
+        In this case, a sort based on this attribute will become much faster compare to text type. Details of changes will be presented in the ER diagram on physical database model.<br/>
+        Numerical values are mostly integer such as block, points, player id and retweet count. The range for play stats are mostly non-negative value that smaller that 100. 
+        Where player id can as large as million. One exception is for twitter account id, some of the number is so large that double is needed. 
+        Double is also used for attributes like shooting percentage where the range is from 0 to 1.<br/>
         Date and time is used when their is date involved such as date of an all-star game where the earliest date can be around 1950s.
 
     2. *When should you use an entity versus attribute? (Example: address of a person could be
@@ -70,11 +74,14 @@ In this part I will explain the details about the project according to all the b
     6. *Were there design alternatives? What are their trade-offs: entity vs. attribute, entity vs.
         relationship, binary vs. ternary relationships?*<br/>
 
-        The original design is to use record id instead of combination of two values as primary key for all-star roaster. This way it will consume more space from server and query some extra data that is not useful.
+        The original design is to use record id instead of combination of two values as primary key for all-star roaster. 
+        This way it will consume more space from server and query some extra data that is not useful.
 
-        Twitter account and tweets for NBA team, plyer and team was originally designed to be stored <br/>separately due to the structure of my raw data. However, they were combined into two entities where one stored all the twitter account and the other one stored tweets.<br/>
+        Twitter account and tweets for NBA team, plyer and team was originally designed to be stored <br/>separately due to the structure of my raw data. 
+        However, they were combined into two entities where one stored all the twitter account and the other one stored tweets.<br/>
 
-        Hashtags was stored as a list along side with tweets. However, during the query of counting hashtags, the lack of ability to handle string for MySQL made it very difficult. I then switched to a new design where hashtags are store in an independent entity where the tweet id is the foreign key. 
+        Hashtags was stored as a list along side with tweets. However, during the query of counting hashtags, the lack of ability to handle string for MySQL made it very difficult. 
+        I then switched to a new design where hashtags are store in an independent entity where the tweet id is the foreign key. 
 
     7. *Where are you going to find real-world data to populate your model?*<br/>
         Part of my data is from last assignment where I requested with nba_api and scraped from Real GM.<br/>
@@ -320,7 +327,8 @@ In this part I will explain the details about the project according to all the b
     From the result we can see that LeBron James is one of the most popular player on twitter where his tweet about white house is the most popular tweet in my database.
 - At least 5 (10 if two people) distinct use cases of queries that are particular to your domain.<br/>
 1. Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.
-
+2. Find the most active player on twitter with their popularity.
+3. Find what hashtag each nba player uses most frequently.
 
 - SQL expressions that express the 5 (10 if two people) use cases of queries that you write.<br/>
 1. Find the most accurate three pointer shooter after 1995 where the person need has at least 100 attempts.<br/>
@@ -328,7 +336,8 @@ In this part I will explain the details about the project according to all the b
     -- Create view of player enter the league after 1995. join with draft history and player id.
     CREATE OR REPLACE VIEW stats_post_1995 AS
     SELECT
-    	pi1995.FULL_NAME, prt.PLAYER_ID,
+    	pi1995.FULL_NAME, 
+         prt.PLAYER_ID,
     -- Game played
     	prt.GP,
     -- Game Started
@@ -393,7 +402,7 @@ In this part I will explain the details about the project according to all the b
     | Monte Morris  |   48 |  116 | 0.4138 |   440 |
     
 	The results shows taht the player has highest three pointer shooting percentage is Stephen Curry with 43.38%. Other player with in the top 10 are shown in the table as well.
-2. Find the most active player on twitter with their popularities.
+2. Find the most active player on twitter with their popularity.
 	```mysql
     -- See how many tweets each player tweeted
     SELECT USER_NAME,COUNT(*) FROM tweets WHERE TYPE='player'
@@ -516,7 +525,9 @@ In this part I will explain the details about the project according to all the b
     | Giannis Antetokounmpo | NBAVote            |    49 |
     | Derrick Rose          | TheReturn          |    34 |
     
-    From the query result we can tell Russell Westbrook has the highest frequency of a hashtag named 'whynot'. This should be his signature shoes' name. This happened to other players as well. For example, 'DubNation' is a nick name for his team where 'TEAMCP3' is Chris Paul's brand. Seems famous players tend to present their brand or team most often.
+    From the query result we can tell Russell Westbrook has the highest frequency of a hashtag named 'whynot'. This should be his signature shoes' name. 
+    This happened to other players as well. For example, 'DubNation' is a nick name for his team where 'TEAMCP3' is Chris Paul's brand. Seems famous players tend to present their brand or team most often.
+    
 * * *
 
 # References
