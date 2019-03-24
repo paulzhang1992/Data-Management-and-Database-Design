@@ -415,5 +415,5 @@ SELECT frequentHashtag("Chris Paul");
 Return:
 >TeamCP3
 
-1. Order the player most liked tweet
+2. Get one player's most liked tweet
 
