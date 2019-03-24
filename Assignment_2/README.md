@@ -418,7 +418,7 @@ The following five use cases are designed for this assignment
 	
 2. Find players had most all-star appearances.
     ```mysql
-    -- Use case 4
+    -- Use case 2
     -- Most All-star appearances
     SELECT pi.FULL_NAME, allstar.* 
     FROM player_id pi 
