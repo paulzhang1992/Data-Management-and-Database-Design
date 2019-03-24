@@ -79,13 +79,9 @@ Multiple value are found in some field while FIC and REB are calculated value(Th
 *Table 3: draft_history:*
 > There is no calculated value in this entity.\
 > partial dependency exist for this entity.\
-> Player name can be represent with player id, where all other information is depend on team id.
-> All information can be fin from teams entity. Therefore drop column is enough for this case.
+> Player name can be represent with player id.
 >```mysql-sql
 >alter table draft_history drop column PLAYER_NAME;
->alter table draft_history drop column TEAM_CITY;
->alter table draft_history drop column TEAM_NAME;
->alter table draft_history drop column TEAM_ABBREVIATION;
 >```
 > After modification 2NF is satisfied.
 
@@ -168,8 +164,14 @@ Multiple value are found in some field while FIC and REB are calculated value(Th
 > Therefor 3NF is satisfied.
 
 *Table 3: draft_history:*
-> There is no transitive dependency with in this entity
-> Therefor 3NF is satisfied.
+> Team information is depend on the non-primary value team
+>```mysql
+>alter table draft_history drop column TEAM_CITY;
+>alter table draft_history drop column TEAM_NAME;
+>alter table draft_history drop column TEAM_ABBREVIATION;
+>```
+>Dropping the values are fine since they are also stored in teams entity.
+After modifying, the entity is in 3NF.
 
 *Table 4: game_by_team:*
 > There is no transitive dependency with in this entity
