@@ -51,7 +51,7 @@ FROM (SELECT pi1995.FULL_NAME,
 WHERE FG3A >= 100
 ORDER BY F3PCT DESC;
 
---2
+-- 2
 CREATE OR REPLACE VIEW all_star_appearances AS
   -- Most All-star appearances
 SELECT pi.FULL_NAME, allstar.*
@@ -65,7 +65,7 @@ FROM player_id pi
      On pi.PLAYER_ID = allstar.PLAYER_ID
 ORDER BY allstar.appearances DESC;
 
---3
+-- 3
 CREATE OR REPLACE VIEW win_post_1983 AS
   -- Team with most wins
 SELECT teams.FULL_NAME, win.*
@@ -85,7 +85,7 @@ FROM teams
                    ORDER BY WINS Desc) win ON teams.ID = win.TEAM_ID;
 
 
---4
+-- 4
 CREATE OR REPLACE VIEW player_tweets_popularity AS
   -- Present with likes/tweet
 SELECT twitter_accounts.FULL_NAME, likes.*
@@ -100,7 +100,7 @@ FROM twitter_accounts
 WHERE ACCOUNT_TYPE = 'player';
 
 
---5
+-- 5
 CREATE OR REPLACE VIEW hashtag_frequency AS
 SELECT HASHTAG, temp.USER_NAME, MAX(temp.TYPE) TYPE, COUNT(*) times
 FROM hashtags
