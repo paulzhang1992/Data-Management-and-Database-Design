@@ -516,6 +516,7 @@ Return:
 | beenAnAllstar("Chris Paul") |
 |:---------------------------:|
 |                           1 |
+
 Test case 2:
 ```mysql
 -- Non NBA player for testing
@@ -559,6 +560,7 @@ Return:
 | favPerTweet("Stephen Curry") |
 |:----------------------------:|
 |                    4726.6536 |
+
 Test case 2:
 ```mysql
 -- Non NBA player
