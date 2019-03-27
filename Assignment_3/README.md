@@ -1,8 +1,10 @@
 #Assignment 3
+
 ## Abstract
 This assignment mainly contains 4 parts. Firstly is perform database normalization. Normalization is performed with its 1NF, 2NF and 3NF.
 After normalization, indexes are created for improve the performance of previously created use cases.
 5 function and 5 procedures are also designed and created to fulfill the requirement of this assignment.
+
 ### 1st form of normalization
 *Table 1: allstar_games*
 >Use explain and select * to see the general information of the entity
@@ -452,12 +454,13 @@ Return:
 3. Most scored player drafted on certain year
 ```mysql
 DELIMITER //
-
 CREATE FUNCTION bestScorerYear(draftYear INT)
 RETURNS TEXT
 BEGIN
   DECLARE playerName TEXT;
+  -- Join the result with player name
   SELECT FULL_NAME INTO playerName
+  -- Select season, id and scores from draft history and total stats
   FROM (SELECT d.PLAYER_ID, d.SEASON, p.PTS
         FROM draft_history d
                LEFT JOIN player_regular_totalstats p ON d.PLAYER_ID = p.PLAYER_ID
@@ -465,6 +468,7 @@ BEGIN
         ORDER BY PTS DESC
        ) t
          LEFT JOIN player_id ON t.PLAYER_ID = player_id.PLAYER_ID
+  -- Top 1 selection
   LIMIT 1;
 
   RETURN playerName;
@@ -485,7 +489,6 @@ Return:
 4. If a player is an all-star player
 ```mysql
 DELIMITER //
-
 CREATE FUNCTION beenAnAllstar(playerName Text)
 RETURNS BOOLEAN
 BEGIN
@@ -516,8 +519,8 @@ SELECT beenAnAllstar("Chris Paul");
 Return:
 
 | beenAnAllstar("Chris Paul") |
-|:---------------------------:|
-|                           1 |
+| :-------------------------: |
+|              1              |
 
 Test case 2:
 ```mysql
@@ -528,10 +531,9 @@ Return:
 | beenAnAllstar("sad") |
 |:--------------------:|
 |                    0 |
-5. Get likes/tweet for user to see their popularity
+5. Get likes/tweet for user to see their popularity based on favorites per tweet 
 ```mysql
 DELIMITER //
-
 CREATE FUNCTION favPerTweet(userName Text)
 RETURNS DOUBLE
 BEGIN
@@ -579,10 +581,11 @@ Return:
 DELIMITER //
 CREATE PROCEDURE explainDatabase()
 BEGIN
+-- Database details
   SHOW DATABASES;
-
+-- Show all tables in NBA database
   SHOW TABLES;
-  
+-- Some details might help understanding the database
   SELECT i.TABLE_NAME, i.COLUMN_NAME, i.IS_NULLABLE, i.DATA_TYPE, i.PRIVILEGES
   FROM information_schema.columns i
   WHERE table_schema = 'nba';
@@ -811,6 +814,7 @@ BEGIN
   FROM player_regular_totalstats s
          LEFT JOIN player_id p ON s.PLAYER_ID = p.PLAYER_ID
   ORDER BY CASE orderWith
+  -- Order on input parameter. Default or parameter not reconized case will be ordered by points
              WHEN "REB" THEN Rebound
              WHEN "BLK" THEN Block
              WHEN "AST" THEN Assist
@@ -1026,7 +1030,7 @@ Return:
 This is an individual assignment all the work is done by me personally.
 The works include normalize the database, create view for use case, create index to improve performance,
  create 5 functions and create 5 procedures.
- 
+
 ## References
 All the material used to lean normalization, index, function and procedure are provided by Prof. Brown.
 
@@ -1042,4 +1046,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
