@@ -1,0 +1,133 @@
+[
+    {
+        "model_id": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "ModelKeyV3",
+                    "schema_type": "Key<Model>"
+                },
+                "name": "StackedEnsemble_BestOfFamily_AutoML_20190416_102359",
+                "type": "Key<Model>",
+                "URL": "/3/Models/StackedEnsemble_BestOfFamily_AutoML_20190416_102359"
+            }
+        },
+        "training_frame": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "FrameKeyV3",
+                    "schema_type": "Key<Frame>"
+                },
+                "name": "automl_training_kc_house_data.hex",
+                "type": "Key<Frame>",
+                "URL": "/3/Frames/automl_training_kc_house_data.hex"
+            }
+        },
+        "response_column": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "ColSpecifierV3",
+                    "schema_type": "VecSpecifier"
+                },
+                "column_name": "price",
+                "is_member_of_frames": null
+            }
+        },
+        "validation_frame": {
+            "default": null,
+            "actual": null
+        },
+        "base_models": {
+            "default": [],
+            "actual": [
+                {
+                    "__meta": {
+                        "schema_version": 3,
+                        "schema_name": "ModelKeyV3",
+                        "schema_type": "Key<Model>"
+                    },
+                    "name": "XRT_1_AutoML_20190416_102359",
+                    "type": "Key<Model>",
+                    "URL": "/3/Models/XRT_1_AutoML_20190416_102359"
+                },
+                {
+                    "__meta": {
+                        "schema_version": 3,
+                        "schema_name": "ModelKeyV3",
+                        "schema_type": "Key<Model>"
+                    },
+                    "name": "DeepLearning_1_AutoML_20190416_102359",
+                    "type": "Key<Model>",
+                    "URL": "/3/Models/DeepLearning_1_AutoML_20190416_102359"
+                },
+                {
+                    "__meta": {
+                        "schema_version": 3,
+                        "schema_name": "ModelKeyV3",
+                        "schema_type": "Key<Model>"
+                    },
+                    "name": "GBM_grid_1_AutoML_20190416_102359_model_1",
+                    "type": "Key<Model>",
+                    "URL": "/3/Models/GBM_grid_1_AutoML_20190416_102359_model_1"
+                },
+                {
+                    "__meta": {
+                        "schema_version": 3,
+                        "schema_name": "ModelKeyV3",
+                        "schema_type": "Key<Model>"
+                    },
+                    "name": "DRF_1_AutoML_20190416_102359",
+                    "type": "Key<Model>",
+                    "URL": "/3/Models/DRF_1_AutoML_20190416_102359"
+                },
+                {
+                    "__meta": {
+                        "schema_version": 3,
+                        "schema_name": "ModelKeyV3",
+                        "schema_type": "Key<Model>"
+                    },
+                    "name": "GLM_grid_1_AutoML_20190416_102359_model_1",
+                    "type": "Key<Model>",
+                    "URL": "/3/Models/GLM_grid_1_AutoML_20190416_102359_model_1"
+                }
+            ]
+        },
+        "metalearner_algorithm": {
+            "default": "AUTO",
+            "actual": "AUTO"
+        },
+        "metalearner_nfolds": {
+            "default": 0,
+            "actual": 5
+        },
+        "metalearner_fold_assignment": {
+            "default": null,
+            "actual": null
+        },
+        "metalearner_fold_column": {
+            "default": null,
+            "actual": null
+        },
+        "keep_levelone_frame": {
+            "default": false,
+            "actual": true
+        },
+        "metalearner_params": {
+            "default": "",
+            "actual": ""
+        },
+        "seed": {
+            "default": -1,
+            "actual": 6590702504966973490
+        },
+        "export_checkpoints_dir": {
+            "default": null,
+            "actual": null
+        }
+    }
+]

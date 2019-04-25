@@ -1,0 +1,218 @@
+i. DRF( random forest)
+		1. nfolds
+		2. score_tree_interval
+		3. fold_assignment
+		4. fold_column
+		5. weights_column
+		6. balance_classes
+		7. class_sampling_factors
+		8. max_after_balance_size
+		9. max_confusion_matrix_size
+		10. max_hit_ratio_k
+		11. ntrees
+		12. max_depth
+		13. min_rows
+		14. nbins
+		15. nbins_top_level
+		16. nbins_cats
+		17. stopping_rounds
+		18. stopping_metric
+		19. stopping_tolerance
+		20. seed
+		21. mtries
+		22. sample_rate
+		23. sample_rate_per_class
+		24. min_split_improvement
+		25. histogram_type
+		26. categorical_encoding
+		27. distribution
+
+ii. DeepLearning & DL Grid
+		1. nfolds
+		2. fold_assignment
+		3. fold_column
+		4. score_each_iteration
+		5. weights_column
+		6. max_after_balance_size
+		7. max_confusion_matrix_size
+		8. max_hit_ratio_k
+		9. pretrained_autoencoder
+
+		12. standardize
+		13. activation
+		14. epochs
+		15. train_samples_per_iteration
+		16. seed
+		17. rho
+		18. epsilon
+		19. rate
+		20. rate_annealing
+		21. rate_decay
+		22. momentum_start
+		23. momentum_ramp
+		24. l1
+		25. l2
+		26. max_w2
+		27. initial_weight_distribution
+		28. initial_weight_scale
+		29. initial_biases
+		30. loss
+		31. quantile_alpha
+		32. tweedie_power
+		33. score_interval
+		34. huber_alpha
+		35. score_training_samples
+		36. score_validation_samples
+		37. score_duty_cycle
+		38. stopping_rounds
+		39. stopping_metric
+		40. stopping_tolerance
+		41. max_runtime_secs
+		42. score_validation_sampling
+		43. diagnostics
+		44. fast_mode
+		45. force_load_balance
+		46. variable_importances
+		47. single_node_mode
+		48. quiet_mode
+		49. autoencoder
+		50. sparse
+		51. col_major
+		52. average_activation
+		53. sparsity_beta
+		54. reproducible
+		55. export_weights_and_biases
+		56. mini_batch_size
+		57. categorical_encoding
+		58. elastic_averaging
+		59. elastic_averaging_moving_rate
+		60. elastic_averaging_regularization
+
+iii. GBM (Grdient Boosting ML) & GBM Grid
+		1. nfolds
+		2. weights_column
+		3. balance_classes
+		4. max_after_balance_size
+		5. max_confusion_matrix_size
+		6. max_hit_ratio_k
+		7. ntrees
+		8. max_depth
+		9. min_rows
+		10. nbins
+		11. nbins_top_level
+		12. nbins_cats
+		13. stopping_rounds
+		14. stopping_metric
+		15. stopping_tolerance
+		16. seed
+		17. learn_rate
+		18. learn_rate_annealing
+		19. distribution
+		20. quantile_alpha
+		21. tweedie_power
+		22. huber_alpha
+		23. sample_rate
+		24. sample_rate_per_class
+		25. min_split_improvement
+		26. histogram_type
+		27. pred_noise_bandwidth
+		28. categorical_encoding
+		
+iv. StackedEnsemble & StackedEnsemble Family
+		1. metalearner_algorithm
+		2. metalearner_nfolds
+		3. metalearner_fold_assignment
+		4. metalearner_fold_column
+		5. keep_levelone_frame
+		6. metalearner_params
+		7. seed
+
+v. XRT (Reg tree)
+		1. nfolds
+		2. score_each_iteration
+		3. score_tree_interval
+		4. fold_assignment
+		5. fold_column
+		6. offset_column
+		7. weights_column
+		8. balance_classes
+		9. max_after_balance_size
+		10. max_confusion_matrix_size
+		11. max_hit_ratio_k
+		12. ntrees
+		13. max_depth
+		14. min_rows
+		15. nbins
+		16. nbins_top_level
+		17. nbins_cats
+		18. stopping_rounds
+		19. stopping_metric
+		20. stopping_tolerance
+		21. seed
+		22. sample_rate
+		23. sample_rate_per_class
+		24. histogram_type
+		25. categorical_encoding
+		26. distribution
+
+vi. GLM
+		1. nfolds
+		2. seed
+		3. fold_assignment
+		4. fold_column
+		5. offset_column
+		6. weights_column
+		7. tweedie_variance_power
+		8. tweedie_link_power
+		9. solver
+		10. alpha
+		11. lambda
+		12. lambda_search
+		13. early_stopping
+		14. nlambdas
+		15. standardize
+		16. missing_values_handling
+		17. max_iterations
+		18. objective_epsilon
+		19. beta_epsilon
+		20. gradient_epsilon
+		21. link
+		22. prior
+		23. lambda_min_ratio
+		24. interactions
+		25. max_after_balance_size
+		26. max_confusion_matrix_size
+		27. max_hit_ratio_k
+		28. max_runtime_secs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

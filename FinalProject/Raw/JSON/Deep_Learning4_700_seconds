@@ -1,0 +1,397 @@
+[
+    {
+        "model_id": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "ModelKeyV3",
+                    "schema_type": "Key<Model>"
+                },
+                "name": "DeepLearning_grid_1_AutoML_20190416_102359_model_3",
+                "type": "Key<Model>",
+                "URL": "/3/Models/DeepLearning_grid_1_AutoML_20190416_102359_model_3"
+            }
+        },
+        "training_frame": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "FrameKeyV3",
+                    "schema_type": "Key<Frame>"
+                },
+                "name": "automl_training_kc_house_data.hex",
+                "type": "Key<Frame>",
+                "URL": "/3/Frames/automl_training_kc_house_data.hex"
+            }
+        },
+        "validation_frame": {
+            "default": null,
+            "actual": null
+        },
+        "nfolds": {
+            "default": 0,
+            "actual": 5
+        },
+        "keep_cross_validation_models": {
+            "default": true,
+            "actual": false
+        },
+        "keep_cross_validation_predictions": {
+            "default": false,
+            "actual": true
+        },
+        "keep_cross_validation_fold_assignment": {
+            "default": false,
+            "actual": false
+        },
+        "fold_assignment": {
+            "default": "AUTO",
+            "actual": "Modulo"
+        },
+        "fold_column": {
+            "default": null,
+            "actual": null
+        },
+        "response_column": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "ColSpecifierV3",
+                    "schema_type": "VecSpecifier"
+                },
+                "column_name": "price",
+                "is_member_of_frames": null
+            }
+        },
+        "ignored_columns": {
+            "default": null,
+            "actual": []
+        },
+        "ignore_const_cols": {
+            "default": true,
+            "actual": true
+        },
+        "score_each_iteration": {
+            "default": false,
+            "actual": false
+        },
+        "weights_column": {
+            "default": null,
+            "actual": null
+        },
+        "offset_column": {
+            "default": null,
+            "actual": null
+        },
+        "balance_classes": {
+            "default": false,
+            "actual": false
+        },
+        "class_sampling_factors": {
+            "default": null,
+            "actual": null
+        },
+        "max_after_balance_size": {
+            "default": 5.0,
+            "actual": 5.0
+        },
+        "max_confusion_matrix_size": {
+            "default": 20,
+            "actual": 20
+        },
+        "max_hit_ratio_k": {
+            "default": 0,
+            "actual": 0
+        },
+        "checkpoint": {
+            "default": null,
+            "actual": null
+        },
+        "pretrained_autoencoder": {
+            "default": null,
+            "actual": null
+        },
+        "overwrite_with_best_model": {
+            "default": true,
+            "actual": false
+        },
+        "use_all_factor_levels": {
+            "default": true,
+            "actual": true
+        },
+        "standardize": {
+            "default": true,
+            "actual": true
+        },
+        "activation": {
+            "default": "Rectifier",
+            "actual": "RectifierWithDropout"
+        },
+        "hidden": {
+            "default": [
+                200,
+                200
+            ],
+            "actual": [
+                50,
+                50,
+                50
+            ]
+        },
+        "epochs": {
+            "default": 10.0,
+            "actual": 9.388331199557241
+        },
+        "train_samples_per_iteration": {
+            "default": -2,
+            "actual": -2
+        },
+        "target_ratio_comm_to_comp": {
+            "default": 0.05,
+            "actual": 0.05
+        },
+        "seed": {
+            "default": -1,
+            "actual": 7369419992095606222
+        },
+        "adaptive_rate": {
+            "default": true,
+            "actual": true
+        },
+        "rho": {
+            "default": 0.99,
+            "actual": 0.95
+        },
+        "epsilon": {
+            "default": 1e-08,
+            "actual": 1e-07
+        },
+        "rate": {
+            "default": 0.005,
+            "actual": 0.005
+        },
+        "rate_annealing": {
+            "default": 1e-06,
+            "actual": 1e-06
+        },
+        "rate_decay": {
+            "default": 1.0,
+            "actual": 1.0
+        },
+        "momentum_start": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "momentum_ramp": {
+            "default": 1000000.0,
+            "actual": 1000000.0
+        },
+        "momentum_stable": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "nesterov_accelerated_gradient": {
+            "default": true,
+            "actual": true
+        },
+        "input_dropout_ratio": {
+            "default": 0.0,
+            "actual": 0.15
+        },
+        "hidden_dropout_ratios": {
+            "default": null,
+            "actual": [
+                0.3,
+                0.3,
+                0.3
+            ]
+        },
+        "l1": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "l2": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "max_w2": {
+            "default": 3.4028235e+38,
+            "actual": 3.4028235e+38
+        },
+        "initial_weight_distribution": {
+            "default": "UniformAdaptive",
+            "actual": "UniformAdaptive"
+        },
+        "initial_weight_scale": {
+            "default": 1.0,
+            "actual": 1.0
+        },
+        "initial_weights": {
+            "default": null,
+            "actual": null
+        },
+        "initial_biases": {
+            "default": null,
+            "actual": null
+        },
+        "loss": {
+            "default": "Automatic",
+            "actual": "Automatic"
+        },
+        "distribution": {
+            "default": "AUTO",
+            "actual": "AUTO"
+        },
+        "quantile_alpha": {
+            "default": 0.5,
+            "actual": 0.5
+        },
+        "tweedie_power": {
+            "default": 1.5,
+            "actual": 1.5
+        },
+        "huber_alpha": {
+            "default": 0.9,
+            "actual": 0.9
+        },
+        "score_interval": {
+            "default": 5.0,
+            "actual": 5.0
+        },
+        "score_training_samples": {
+            "default": 10000,
+            "actual": 10000
+        },
+        "score_validation_samples": {
+            "default": 0,
+            "actual": 0
+        },
+        "score_duty_cycle": {
+            "default": 0.1,
+            "actual": 0.1
+        },
+        "classification_stop": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "regression_stop": {
+            "default": 1e-06,
+            "actual": 1e-06
+        },
+        "stopping_rounds": {
+            "default": 5,
+            "actual": 0
+        },
+        "stopping_metric": {
+            "default": "AUTO",
+            "actual": "deviance"
+        },
+        "stopping_tolerance": {
+            "default": 0.0,
+            "actual": 0.006802091556591675
+        },
+        "max_runtime_secs": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "score_validation_sampling": {
+            "default": "Uniform",
+            "actual": "Uniform"
+        },
+        "diagnostics": {
+            "default": true,
+            "actual": true
+        },
+        "fast_mode": {
+            "default": true,
+            "actual": true
+        },
+        "force_load_balance": {
+            "default": true,
+            "actual": true
+        },
+        "variable_importances": {
+            "default": true,
+            "actual": true
+        },
+        "replicate_training_data": {
+            "default": true,
+            "actual": true
+        },
+        "single_node_mode": {
+            "default": false,
+            "actual": false
+        },
+        "shuffle_training_data": {
+            "default": false,
+            "actual": false
+        },
+        "missing_values_handling": {
+            "default": "MeanImputation",
+            "actual": "MeanImputation"
+        },
+        "quiet_mode": {
+            "default": false,
+            "actual": false
+        },
+        "autoencoder": {
+            "default": false,
+            "actual": false
+        },
+        "sparse": {
+            "default": false,
+            "actual": false
+        },
+        "col_major": {
+            "default": false,
+            "actual": false
+        },
+        "average_activation": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "sparsity_beta": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "max_categorical_features": {
+            "default": 2147483647,
+            "actual": 2147483647
+        },
+        "reproducible": {
+            "default": false,
+            "actual": false
+        },
+        "export_weights_and_biases": {
+            "default": false,
+            "actual": false
+        },
+        "mini_batch_size": {
+            "default": 1,
+            "actual": 1
+        },
+        "categorical_encoding": {
+            "default": "AUTO",
+            "actual": "AUTO"
+        },
+        "elastic_averaging": {
+            "default": false,
+            "actual": false
+        },
+        "elastic_averaging_moving_rate": {
+            "default": 0.9,
+            "actual": 0.9
+        },
+        "elastic_averaging_regularization": {
+            "default": 0.001,
+            "actual": 0.001
+        },
+        "export_checkpoints_dir": {
+            "default": null,
+            "actual": null
+        }
+    }
+]

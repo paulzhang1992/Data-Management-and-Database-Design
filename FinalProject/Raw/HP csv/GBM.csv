@@ -1,0 +1,11 @@
+model_id,nfolds,weights_column,balance_classes,max_after_balance_size,max_confusion_matrix_size,max_hit_ratio_k,ntrees,max_depth,min_rows,nbins,nbins_top_level,nbins_cats,stopping_rounds,stopping_metric,stopping_tolerance,seed,learn_rate,learn_rate_annealing,distribution,quantile_alpha,tweedie_power,huber_alpha,sample_rate,sample_rate_per_class,min_split_improvement,histogram_type,pred_noise_bandwidth,categorical_encoding
+GBM_grid_1_AutoML_20190418_165439_model_1,5,null,false,5.0,20,0,114,9,15.0,20,1024,1024,0,deviance,0.006802091556591675,8798085263549016279,0.1,1.0,gaussian,0.5,1.5,0.9,0.6,null,0.0001,AUTO,0.0,AUTO
+GBM_grid_1_AutoML_20190418_172432_model_2,5,null,false,5.0,20,0,115,10,10.0,20,1024,1024,0,deviance,0.006802091556591675,5533495044660120166,0.08,1.0,gaussian,0.5,1.5,0.9,0.8,null,0.0001,AUTO,0.0,AUTO
+GBM_grid_1_AutoML_20190418_165439_model_2,5,null,false,5.0,20,0,447,11,10.0,20,1024,1024,0,deviance,0.006802091556591675,-7381211768048002330,0.001,1.0,gaussian,0.5,1.5,0.9,0.9,null,0.0001,AUTO,0.0,AUTO
+GBM_grid_1_AutoML_20190418_163635_model_1,5,null,false,5.0,20,0,4,10,5.0,20,1024,1024,0,deviance,0.006802091556591675,-2522732221109484411,0.008,1.0,gaussian,0.5,1.5,0.9,1.0,null,1e-05,AUTO,0.0,AUTO
+GBM_grid_1_AutoML_20190418_172432_model_4,5,null,false,5.0,20,0,159,4,15.0,20,1024,1024,0,deviance,0.006802091556591675,5082247484933305520,0.1,1.0,gaussian,0.5,1.5,0.9,0.5,null,0.0001,AUTO,0.0,AUTO
+GBM_1_AutoML_20190418_163635,5,null,false,5.0,20,0,86,15,100.0,20,1024,1024,0,deviance,0.006802091556591675,-4295154864655339185,0.1,1.0,gaussian,0.5,1.5,0.9,0.8,null,1e-05,AUTO,0.0,AUTO
+GBM_1_AutoML_20190418_181012,5,null,false,5.0,20,0,84,15,100.0,20,1024,1024,0,deviance,0.006802091556591675,-4520999438455086369,0.1,1.0,gaussian,0.5,1.5,0.9,0.8,null,1e-05,AUTO,0.0,AUTO
+GBM_3_AutoML_20190418_163635,5,null,false,5.0,20,0,86,15,100.0,20,1024,1024,0,deviance,0.006802091556591675,-4295154864655339185,0.1,1.0,gaussian,0.5,1.5,0.9,0.8,null,1e-05,AUTO,0.0,AUTO
+GBM_3_AutoML_20190418_165439,5,null,false,5.0,20,0,79,15,100.0,20,1024,1024,0,deviance,0.006802091556591675,-895620038244434669,0.1,1.0,gaussian,0.5,1.5,0.9,0.8,null,1e-05,AUTO,0.0,AUTO
+GBM_1_AutoML_20190418_165439,5,null,false,5.0,20,0,79,15,100.0,20,1024,1024,0,deviance,0.006802091556591675,-895620038244434669,0.1,1.0,gaussian,0.5,1.5,0.9,0.8,null,1e-05,AUTO,0.0,AUTO

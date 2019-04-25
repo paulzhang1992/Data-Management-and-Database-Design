@@ -1,0 +1,5 @@
+model_id,metalearner_algorithm,metalearner_nfolds,metalearner_fold_assignment,metalearner_fold_column,keep_levelone_frame,metalearner_params,seed
+StackedEnsemble_AllModels_AutoML_20190416_102359,AUTO,5,null,null,true,,3990829087418305085
+StackedEnsemble_BestOfFamily_AutoML_20190416_102359,AUTO,5,null,null,true,,6590702504966973490
+StackedEnsemble_AllModels_AutoML_20190416_112303,AUTO,5,null,null,true,,4024451812177012347
+StackedEnsemble_BestOfFamily_AutoML_20190416_112303,5,null,null,true,,6510334021804555172

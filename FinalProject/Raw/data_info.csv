@@ -1,0 +1,2 @@
+data_id,data_name,url,rows,columns,type
+1,housing price,https://www.kaggle.com/harlfoxem/housesalesprediction,21613,21,regression

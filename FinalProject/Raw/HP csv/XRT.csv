@@ -1,0 +1,5 @@
+model_id,nfolds,score_each_iteration,score_tree_interval,fold_assignment,fold_column,offset_column,weights_column,balance_classes,max_after_balance_size,max_confusion_matrix_size,max_hit_ratio_k,ntrees,max_depth,min_rows,nbins,nbins_top_level,nbins_cats,stopping_rounds,stopping_metric,stopping_tolerance,seed,sample_rate,sample_rate_per_class,histogram_type,categorical_encoding,distribution
+XRT_1_AutoML_20190415_212612,5,false,0,Modulo,null,null,null,false,5.0,20,0,50,20,1.0,20,1024,1024,0,deviance,0.006802091556591675,-9114167429941750415,0.6320000290870667,null,Random,AUTO,gaussian
+XRT_1_AutoML_20190416_102359,5,false,0,Modulo,null,null,null,false,5.0,20,0,50,20,1.0,20,1024,1024,0,deviance,0.006802091556591675,-893774886866376391,0.6320000290870667,null,Random,AUTO,gaussian
+XRT_1_AutoML_20190416_112303,5,false,0,Modulo,null,null,null,false,5.0,20,0,50,20,1.0,20,1024,1024,0,deviance,0.006802091556591675,3956522368262092058,0.6320000290870667,null,Random,AUTO,gaussian
+

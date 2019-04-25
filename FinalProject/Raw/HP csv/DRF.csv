@@ -1,0 +1,6 @@
+model_id,nfolds,score_tree_interval,fold_assignment,fold_column,weights_column,balance_classes,class_sampling_factors,max_after_balance_size,max_confusion_matrix_size,max_hit_ratio_k,ntrees,max_depth,min_rows,nbins,nbins_top_level,nbins_cats,stopping_rounds,stopping_metric,stopping_tolerance,seed,mtries,sample_rate,sample_rate_per_class,min_split_improvement,histogram_type,categorical_encoding,distribution
+DRF_1_AutoML_20190415_205714,5,0,Modulo,null,null,false,null,5.0,20,0,50,20,1.0,20,1024,1024,0,AUTO,0.006802091556591675,8581272521533921537,-1,0.6320000290870667,null,1e-05,AUTO,AUTO,gaussian
+DRF_1_AutoML_20190416_102359,5,0,Modulo,null,null,false,null,5.0,20,0,45,20,1.0,20,1024,1024,0,AUTO,0.006802091556591675,9117191528931432071,-1,0.6320000290870667,null,1e-05,AUTO,AUTO,gaussian
+DRF_1_AutoML_20190416_112303,5,0,Modulo,null,null,false,null,5.0,20,0,50,20,1.0,20,1024,1024,0,AUTO,0.006802091556591675,-966078208540649494,-1,0.6320000290870667,null,1e-05,AUTO,AUTO,gaussian
+DRF_1_AutoML_20190415_212612,5,0,Modulo,null,null,false,null,5.0,20,0,50,20,1.0,20,1024,1024,0,AUTO,0.006802091556591675,8103707241923509008,-1,0.6320000290870667,null,1e-05,AUTO,AUTO,gaussian
+DRF_1_AutoML_20190415_211555,5,0,Modulo,null,null,false,null,5.0,20,0,50,20,1.0,20,1024,1024,0,AUTO,0.006802091556591675,3582472035998997326,-1,0.6320000290870667,null,1e-05,AUTO,AUTO,gaussian

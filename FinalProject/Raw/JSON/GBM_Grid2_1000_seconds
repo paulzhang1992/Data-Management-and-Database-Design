@@ -1,0 +1,254 @@
+[
+    {
+        "model_id": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "ModelKeyV3",
+                    "schema_type": "Key<Model>"
+                },
+                "name": "GBM_grid_1_AutoML_20190416_112303_model_3",
+                "type": "Key<Model>",
+                "URL": "/3/Models/GBM_grid_1_AutoML_20190416_112303_model_3"
+            }
+        },
+        "training_frame": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "FrameKeyV3",
+                    "schema_type": "Key<Frame>"
+                },
+                "name": "automl_training_kc_house_data.hex",
+                "type": "Key<Frame>",
+                "URL": "/3/Frames/automl_training_kc_house_data.hex"
+            }
+        },
+        "validation_frame": {
+            "default": null,
+            "actual": null
+        },
+        "nfolds": {
+            "default": 0,
+            "actual": 5
+        },
+        "keep_cross_validation_models": {
+            "default": true,
+            "actual": false
+        },
+        "keep_cross_validation_predictions": {
+            "default": false,
+            "actual": true
+        },
+        "keep_cross_validation_fold_assignment": {
+            "default": false,
+            "actual": false
+        },
+        "score_each_iteration": {
+            "default": false,
+            "actual": false
+        },
+        "score_tree_interval": {
+            "default": 0,
+            "actual": 5
+        },
+        "fold_assignment": {
+            "default": "AUTO",
+            "actual": "Modulo"
+        },
+        "fold_column": {
+            "default": null,
+            "actual": null
+        },
+        "response_column": {
+            "default": null,
+            "actual": {
+                "__meta": {
+                    "schema_version": 3,
+                    "schema_name": "ColSpecifierV3",
+                    "schema_type": "VecSpecifier"
+                },
+                "column_name": "price",
+                "is_member_of_frames": null
+            }
+        },
+        "ignored_columns": {
+            "default": null,
+            "actual": []
+        },
+        "ignore_const_cols": {
+            "default": true,
+            "actual": true
+        },
+        "offset_column": {
+            "default": null,
+            "actual": null
+        },
+        "weights_column": {
+            "default": null,
+            "actual": null
+        },
+        "balance_classes": {
+            "default": false,
+            "actual": false
+        },
+        "class_sampling_factors": {
+            "default": null,
+            "actual": null
+        },
+        "max_after_balance_size": {
+            "default": 5.0,
+            "actual": 5.0
+        },
+        "max_confusion_matrix_size": {
+            "default": 20,
+            "actual": 20
+        },
+        "max_hit_ratio_k": {
+            "default": 0,
+            "actual": 0
+        },
+        "ntrees": {
+            "default": 50,
+            "actual": 207
+        },
+        "max_depth": {
+            "default": 5,
+            "actual": 4
+        },
+        "min_rows": {
+            "default": 10.0,
+            "actual": 30.0
+        },
+        "nbins": {
+            "default": 20,
+            "actual": 20
+        },
+        "nbins_top_level": {
+            "default": 1024,
+            "actual": 1024
+        },
+        "nbins_cats": {
+            "default": 1024,
+            "actual": 1024
+        },
+        "r2_stopping": {
+            "default": 1.7976931348623157e+308,
+            "actual": 1.7976931348623157e+308
+        },
+        "stopping_rounds": {
+            "default": 0,
+            "actual": 0
+        },
+        "stopping_metric": {
+            "default": "AUTO",
+            "actual": "deviance"
+        },
+        "stopping_tolerance": {
+            "default": 0.001,
+            "actual": 0.006802091556591675
+        },
+        "max_runtime_secs": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "seed": {
+            "default": -1,
+            "actual": -4583964125481936855
+        },
+        "build_tree_one_node": {
+            "default": false,
+            "actual": false
+        },
+        "learn_rate": {
+            "default": 0.1,
+            "actual": 0.05
+        },
+        "learn_rate_annealing": {
+            "default": 1.0,
+            "actual": 1.0
+        },
+        "distribution": {
+            "default": "AUTO",
+            "actual": "gaussian"
+        },
+        "quantile_alpha": {
+            "default": 0.5,
+            "actual": 0.5
+        },
+        "tweedie_power": {
+            "default": 1.5,
+            "actual": 1.5
+        },
+        "huber_alpha": {
+            "default": 0.9,
+            "actual": 0.9
+        },
+        "checkpoint": {
+            "default": null,
+            "actual": null
+        },
+        "sample_rate": {
+            "default": 1.0,
+            "actual": 0.6
+        },
+        "sample_rate_per_class": {
+            "default": null,
+            "actual": null
+        },
+        "col_sample_rate": {
+            "default": 1.0,
+            "actual": 0.4
+        },
+        "col_sample_rate_change_per_level": {
+            "default": 1.0,
+            "actual": 1.0
+        },
+        "col_sample_rate_per_tree": {
+            "default": 1.0,
+            "actual": 1.0
+        },
+        "min_split_improvement": {
+            "default": 1e-05,
+            "actual": 0.0001
+        },
+        "histogram_type": {
+            "default": "AUTO",
+            "actual": "AUTO"
+        },
+        "max_abs_leafnode_pred": {
+            "default": 1.7976931348623157e+308,
+            "actual": 1.7976931348623157e+308
+        },
+        "pred_noise_bandwidth": {
+            "default": 0.0,
+            "actual": 0.0
+        },
+        "categorical_encoding": {
+            "default": "AUTO",
+            "actual": "AUTO"
+        },
+        "calibrate_model": {
+            "default": false,
+            "actual": false
+        },
+        "calibration_frame": {
+            "default": null,
+            "actual": null
+        },
+        "custom_metric_func": {
+            "default": null,
+            "actual": null
+        },
+        "export_checkpoints_dir": {
+            "default": null,
+            "actual": null
+        },
+        "monotone_constraints": {
+            "default": null,
+            "actual": null
+        }
+    }
+]
